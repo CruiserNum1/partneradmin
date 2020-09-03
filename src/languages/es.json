@@ -1,0 +1,109 @@
+{
+  "header": {
+    "nav": {
+      "Support": "Soporte"
+    }
+  },
+  "footer": {
+    "hint": "Si es la primera vez realizando un pago en Indacoin, probablemente, usted tendrá que subir una fotografía de su identificación y un selfie.",
+    "limits": {
+      "firstAmount": "${{minAmount}} to {{maxAmount}}",
+      "firstTransaction": "Primera transacción",
+      "dailyLimit": "Limite diario",
+      "monthlyLimit": "Limite mensual"
+    }
+  },
+  "payment": {
+    "page": {
+      "buyCrypto": "Comprar cripto",
+      "creditDebitCard": "con tarjeta de crédito y/o debito",
+      "continue": "Continuar",
+      "cancelPayment": "Cancelar pago"
+    },
+    "inputs": {
+      "youGive": {
+        "label": "Usted da",
+        "error": "min/max cantidad {{minSum}}/{{maxSum}}"
+      },
+      "youGet": {
+        "label": "Usted recibe"
+      },
+      "tagAddress": {
+        "label": "Tag de dirección de destino",
+        "error": "Direccion invalido"
+      },
+      "destinationAddress": {
+        "label": "Tag de dirección de destino",
+        "error": "Direccion invalida"
+      },
+      "emailAddress": {
+        "labelEmail": "Correo electrónico",
+        "labelUser": "User ID",
+        "error": "Email invalido"
+      },
+      "fullName": {
+        "label": "Nombre Completo",
+        "error": "Nombre incorrecto"
+      },
+      "intlTelInput": {
+        "label": "Numero de telefono",
+        "error": "Numero incorrecto"
+      },
+      "birthday": {
+        "label": "Fecha de Nacimiento",
+        "error": "Tiene que tener al menos {{years}} años de edad"
+      },
+      "cardNumber": {
+        "label": "Numero de tarjeta",
+        "error": "Numero de tarjeta invalido"
+      },
+      "validThru": {
+        "label": "Fecha de expiración",
+        "error": "Fecha de tarjeta invalido"
+      },
+      "cvc": {
+        "label": "CVC",
+        "error": "CVC incorrecto"
+      },
+      "fullNameCard": {
+        "label": "Nombre completo",
+        "error": "Nombre incorrecto"
+      },
+      "iAgree": {
+        "label": "Estoy de acuerdo con los <1>Terminos de Uso</1> y <3>Politica de Privacidad</3>"
+      }
+    }
+  },
+  "status": {
+    "order": "Orden: #{{id}}",
+    "paid": "Pagado",
+    "accrualAmount": "Cantidad acumulada",
+    "cryptoWalletAddress": "Direccion Cripto wallet",
+    "date": "Fecha",
+    "yourPhoneNumber": "Tu Numero de Telefono",
+    "pCompleted": "Felicidades! Su pedido ha sido aprobado. Recibirá sus monedas pronto. El tiempo de espera promedio es de 15 a 60 minutos.",
+    "pDeclined": "Su pago fue rechazado por el banco. Verifique que su tarjeta sea compatible con MasterCard SecureCode o tecnología de pago en línea segura Verified by Visa e intente nuevamente.",
+    "pPhone": "Se ha verificado correctamente su número de teléfono",
+    "pTimeout": "Lo sentimos, su pago ha sido rechazado. Averigüe en su banco si la función 3D-Secure (cheque Visa o MasterCard SecureCode) está habilitada en su tarjeta, lo que implica ingresar un código secreto al pagar a través de Internet. El código generalmente se envía a su teléfono mobil.",
+    "pWaiting": "Su pago se está procesando, no cierre esta página y espere hasta 15 minutos hasta que cambiemos el estado de la transacción.",
+    "needKycVerification": "Necesita verificación KYC",
+    "checkPhoneNumber": "Verifica el número de teléfono",
+    "savePhoneNumber": "Guardar número de teléfono",
+    "wrongPhoneNumber": "Número de teléfono equivocado?",
+    "haventReceivedCall": "No ha recibido una llamada?",
+    "inputs": {
+      "code": {
+        "label": "El código de 4 dígitos",
+        "error": "Código digital inválido"
+      },
+      "intlTelInput": {
+        "label": "Numero de telefono",
+        "error": "Numero de telefono invalido"
+      }
+    }
+  },
+  "messages": {
+    "errorFullscreenGET": "Indique los parámetros del socio en la URL. <1 /> Ejemplo: <3> {{path}} </3>",
+    "bubbledCopyAddress": "This address is copied"
+  }
+}

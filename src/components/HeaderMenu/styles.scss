@@ -1,0 +1,304 @@
+.burger {
+    display: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+.close {
+    display: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    user-select: none;
+    > li {
+        display: inline-block;
+        margin-left: 1.4em;
+        a, span {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #000;
+            text-decoration: none;
+        }
+        span {
+            display: inline-block;
+            cursor: pointer;
+            user-select: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .dropDown {
+            display: inline-block;
+            margin-left: 5px;
+            padding-bottom: 2px;
+        }
+    }
+}
+
+.MenuDropdown {
+    z-index: 999;
+    right: 0;
+
+    @media(max-width: 1100px) {
+        right: -160%;
+    }
+
+    > menu {
+        width: 180px;
+        list-style: none;
+        padding: 0;
+    }
+
+    > menu > li {
+        padding: 10px 10px;
+        width: 50%;
+        // background: rgba(#f7f9fa, .8);
+        background: #fff;
+        color: #07203A;
+
+        &:hover {
+            background: #044878;
+            cursor: pointer;
+
+            > div > span {
+                color: #fff;
+            }
+        }
+
+        > div {
+            position: relative;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            > img {
+                display: inline;
+            }
+            span {
+                position: absolute;
+                left: 35px
+            }
+        }
+    }
+}
+        // li:hover {
+        //     background: #E5E5E5;
+        //     cursor: pointer;
+        // }
+
+        // @media(min-width: 1101px) {
+        //     li:last-child {
+        //         border-bottom: 0;
+        //     }
+        //     li {
+        //         width: 100%;
+        //     }
+        // }
+        // @media(max-width: 1100px) {
+        //     width: 150px;
+        //     li {
+        //         width: 50%;
+        //     }
+        // }
+
+@media(max-width: 575px) {
+    .wrapper.show {
+        display: block;
+    }
+    .wrapper {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #fff;
+        z-index: 999999999999;
+    }
+    .burger {
+        display: block;
+    }
+    .close {
+        display: block;
+        img {
+            width: 19px;
+            margin-right: 1em;
+            margin-top: 1em;
+            float: right;
+        }
+    }
+    .menu {
+        flex-direction: column;
+        margin-top: 1em;
+        padding-bottom: 1em;
+        > li {
+            margin-top: 1em;
+            margin-left: 0;
+            a,span {
+                font-size: 1.25rem;
+            }
+            > div {
+                margin-top: 1em;
+                ul {
+                    position: static;
+                }
+            }
+        }
+    }
+
+    .loaderContainer {
+        display: flex;
+
+        .loader {
+            display: none;
+
+            &:last-child {
+                display: initial;
+                width: 2rem;
+                height: .9rem;
+            }
+        }
+    }
+}
+
+@media(min-width: 576px) AND (max-width: 767px) {
+    .wrapper.show {
+        display: block;
+    }
+    .wrapper {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #fff;
+        z-index: 999999999999;
+    }
+    .burger {
+        display: block;
+    }
+    .close {
+        display: block;
+        img {
+            width: 19px;
+            margin-right: 1em;
+            margin-top: 1em;
+            float: right;
+        }
+    }
+    .menu {
+        flex-direction: column;
+        margin-top: 1em;
+        padding-bottom: 1em;
+        > li {
+            margin-top: 1em;
+            margin-left: 0;
+            a,span {
+                font-size: 1.5rem;
+            }
+            > div {
+                margin-top: 1em;
+                ul {
+                    position: static;
+                }
+            }
+        }
+    }
+
+
+    .loaderContainer {
+        display: flex;
+
+        .loader {
+            display: none;
+
+            &:last-child {
+                display: initial;
+                width: 2rem;
+                height: .9rem;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) AND (max-width: 1100px) {
+    .wrapper.show {
+        display: block;
+    }
+    .wrapper {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #fff;
+        z-index: 999999999999;
+    }
+    .burger {
+        display: block;
+    }
+    .close {
+        display: block;
+        img {
+            width: 19px;
+            margin-right: 1em;
+            margin-top: 1em;
+            float: right;
+        }
+    }
+    .menu {
+        flex-direction: column;
+        margin-top: 1em;
+        padding-bottom: 1em;
+        > li {
+            margin-top: 1em;
+            margin-left: 0;
+            a,span {
+                font-size: 1.5rem;
+            }
+            > div {
+                margin-top: 1em;
+                ul {
+                    position: static;
+                }
+            }
+        }
+    }
+
+    .loaderContainer {
+        display: flex;
+
+        .loader {
+            display: none;
+
+            &:last-child {
+                display: initial;
+                width: 2rem;
+                height: .9rem;
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 1101px) AND (max-width: 1200px) {
+
+    .menu {
+
+        > li {
+            display: inline-block;
+            margin-left: 1.2em;
+            a,span {
+                font-size: 1rem;
+                font-weight: 600;
+                color: #000;
+                text-decoration: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,109 @@
+{
+  "header": {
+    "nav": {
+      "Support": "Pomoc"
+    }
+  },
+  "footer": {
+    "hint": "Pokud přes Indacoin platíte poprvé, můžete být požádáni o nahrání fotografie Vašeho občanského či řidičského průkazu a selfie.",
+    "limits": {
+      "firstAmount": "$ {{minAmount}} - {{maxAmount}}",
+      "firstTransaction": "První transakce",
+      "dailyLimit": "Denní limit",
+      "monthlyLimit": "Měsíční limit"
+    }
+  },
+  "payment": {
+    "page": {
+      "buyCrypto": "Nákup kryptoměn",
+      "creditDebitCard": "debetní nebo kreditní kartou",
+      "continue": "Pokračovat",
+      "cancelPayment": "Zrušit platbu"
+    },
+    "inputs": {
+      "youGive": {
+        "label": "Částka k převodu",
+        "error": "min/max částka {{minSum}}/{{maxSum}}"
+      },
+      "youGet": {
+        "label": "Obdržíte"
+      },
+      "tagAddress": {
+        "label": "Tag přijímací peněženky",
+        "error": "Neplatný tag/adresa"
+      },
+      "destinationAddress": {
+        "label": "Adresa přijímací peněženky",
+        "error": "Neplatná adresa"
+      },
+      "emailAddress": {
+        "labelEmail": "E-mailová adresa",
+        "labelUser": "ID uživatele",
+        "error": "Neplatný e-mail"
+      },
+      "fullName": {
+        "label": "Celé jméno",
+        "error": "Neplatné jméno"
+      },
+      "intlTelInput": {
+        "label": "Telefonní číslo",
+        "error": "Neplatné tel. číslo"
+      },
+      "birthday": {
+        "label": "Datum narození",
+        "error": "Musíte být starší než {{years}} let"
+      },
+      "cardNumber": {
+        "label": "Číslo karty",
+        "error": "Neplatné číslo karty"
+      },
+      "validThru": {
+        "label": "Platnost karty",
+        "error": "Neplatné datum platnosti"
+      },
+      "cvc": {
+        "label": "CVC",
+        "error": "Neplatný kód CVC"
+      },
+      "fullNameCard": {
+        "label": "Celé jméno",
+        "error": "Neplatné jméno"
+      },
+      "iAgree": {
+        "label": "Souhlasím s <1>obchodními podmínkami</1> a <3>zásadami ochrany osobních údajů</3>"
+      }
+    }
+  },
+  "status": {
+    "order": "Objednávka: #{{id}}",
+    "paid": "Uhrazeno",
+    "accrualAmount": "Částka",
+    "cryptoWalletAddress": "Adresa kryptoměnové peněženky",
+    "date": "Datum",
+    "yourPhoneNumber": "Vaše telefonní číslo",
+    "pCompleted": "Gratulujeme! Vaše objednávka byla potvrzena. Vaše zaplacené kryptoměny obdržíte již brzy. Obvyklý čas je 15 - 60 minut.",
+    "pDeclined": "Je nám líto, ale platba byla zamítnuta ze strany Vaší banky. Prosíme, ujistěte se, že vydavatel Vaší karty podporuje bezpečnostní prvky 3D Secure, MasterCard SecureCode nebo Verified by Visa. Poté zkuste platbu provést znovu.",
+    "pPhone": "Úspěšně jste ověřili Vaše telefonní číslo.",
+    "pTimeout": "Je nám líto, ale Vaše platba byla zamítnuta ze strany Vaší banky. Prosíme, ujistěte se, že vydavatel Vaší karty podporuje bezpečnostní prvky 3D Secure, MasterCard SecureCode nebo Verified by Visa. Poté zkuste platbu provést znovu.",
+    "pWaiting": "Vaši platbu momentálně zpracováváme. Prosíme, nezavírejte tuto stránku a počkejte, až bude platba zpracována. Budeme Vás informovat.",
+    "needKycVerification": "Je potřeba provést KYC verifikaci",
+    "checkPhoneNumber": "Zkontrolujte tel. číslo",
+    "savePhoneNumber": "Uložit telefonní číslo",
+    "wrongPhoneNumber": "Zadali jste špatné tel. číslo?",
+    "haventReceivedCall": "Neobdrželi jste verifikační kód?",
+    "inputs": {
+      "code": {
+        "label": "Zadejte 4-místný kód",
+        "error": "Neplatný verifikační kód!"
+      },
+      "intlTelInput": {
+        "label": "Telefonní číslo",
+        "error": "Neplatné tel. číslo"
+      }
+    }
+  },
+  "messages": {
+    "errorFullscreenGET": "Prosíme, zadejte partnerský parametr v URL adrese. <1/>Např.: <3>{{path}}</3>",
+    "bubbledCopyAddress": "Adresa je zkopírována!"
+  }
+}

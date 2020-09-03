@@ -1,0 +1,140 @@
+.wrapper {
+
+    > .detailsTitle {
+        margin: 0 auto 20px auto;
+        text-align: center;
+
+        span {
+            color: #B7B7B7;
+            font-size: 14px;
+            font-weight: 500;
+            user-select: none;
+        }
+    }
+
+    ol.table {
+        // flexbox
+        & {
+            display: flex;
+            flex-flow: column nowrap;
+            > li {
+                flex: 0 1 auto;
+            }
+
+            // large screens
+            > li.largeScreens {
+                display: block;
+
+                @media(max-width: 767px) {
+                    & {
+                        display: none;
+                    }
+                }
+            }
+
+            // mobile screen
+            > li.mobileScreens {
+                display: none;
+
+                @media(max-width: 767px) {
+                    & {
+                        display: block;
+                    }
+                }
+            }
+
+            > li > ul {
+                display: flex;
+                // justify-content: space-between;
+                align-items: center;
+
+                > li {
+
+                }
+            }
+        }
+
+        // style
+        & {
+            background: #fff;
+            user-select: none;
+
+            > li {
+                margin-bottom: 10px;
+                padding: 20px 30px;
+
+                > ul {
+                    > li {
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+            }
+        }
+
+        & {
+            // large screens
+            > li.largeScreens {
+                > ul {
+                    > li:nth-child(1) {
+                        width: 28%;
+                    }
+
+                    > li:nth-child(2), > li:nth-child(3) {
+                        width: 10%;
+                    }
+
+                    > li:nth-child(4) {
+                        width: 20%;
+                    }
+
+                    > li:nth-child(5) {
+                        width: 6%;
+                    }
+
+                    > li:nth-child(6) {
+                        width: 7%;
+                    }
+
+                    > li:nth-child(7), > li:nth-child(8) {
+                        width: 8%;
+                    }
+
+                    > li:nth-child(9) {
+                        width: 3%;
+                        text-align: center;
+                    }
+                }
+            }
+
+            // mobile screens
+            > li.mobileScreens {
+                > ul {
+                    > li:nth-child(1) {
+                        width: 28%;
+                    }
+
+                    > li:nth-child(2) {
+                        width: 22%;
+                    }
+
+                    > li:nth-child(3) {
+                        width: 12%;
+                    }
+
+                    > li:nth-child(4) {
+                        width: 20%;
+                    }
+
+                    > li:nth-child(5) {
+                        width: 16%;
+                    }
+        
+                    > li:nth-child(6) {
+                        width: 2%;
+                    }
+                }
+            }
+        }
+    }
+}

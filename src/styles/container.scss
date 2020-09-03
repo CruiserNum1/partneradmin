@@ -1,0 +1,63 @@
+// container
+@mixin container() {
+    & {
+        margin: 0 auto;
+    }
+    @media(max-width: $max-col-sm) {
+        & {
+            width: 95%;
+        }
+    }
+    @media(min-width: $min-col-sm) AND (max-width: $max-col-md) {
+        & {
+            width: 95%;
+        }
+    }
+    @media(min-width: $min-col-md) AND (max-width: $max-col-lg) {
+        & {
+            width: 95%;
+        }
+    }
+    @media(min-width: $min-col-lg) AND (max-width: $max-col-xl) {
+        & {
+            width: 95%;
+        }
+    }
+    @media(min-width: $min-col-xl) AND (max-width: $max-col-xxl) {
+        & {
+            width: 95%;
+        }
+    }
+    @media(min-width: $min-col-xxl) {
+        & {
+            width: 80%;
+        }
+    }
+}
+
+// containerForm
+@mixin containerForm() {
+    & {
+        margin: 0 auto;
+    }
+    @media(max-width: $max-col-sm) {
+        & {
+            width: calc(100% - 40px);
+        }
+    }
+    @media(min-width: $min-col-sm) AND (max-width: $max-col-md) {
+        & {
+            width: 95%;
+        }
+    }
+    @media(min-width: $min-col-md) AND (max-width: $max-col-lg) {
+        & {
+            width: 95%;
+        }
+    }
+    @media(min-width: $min-col-lg) {
+        & {
+            width: 745px;
+        }
+    }
+}

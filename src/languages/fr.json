@@ -1,0 +1,109 @@
+﻿{
+  "header": {
+    "nav": {
+      "Support": "Soutien"
+    }
+  },
+  "footer": {
+    "hint": "Si C'est la première fois que vous effectuez un paiement sur Indacoin, vous devrez probablement télécharger une photo de votre carte d'identité et un selfie.",
+    "limits": {
+      "firstAmount": "${{minAmount}} pour {{maxAmount}}",
+      "firstTransaction": "Première transaction",
+      "dailyLimit": "Limite journalière",
+      "monthlyLimit": "Limite mensuelle"
+    }
+  },
+  "payment": {
+    "page": {
+      "buyCrypto": "Acheter crypto",
+      "creditDebitCard": "avec une carte de débit ou de crédit",
+      "continue": "Continuer",
+      "cancelPayment": "Annuler le paiement"
+    },
+    "inputs": {
+      "youGive": {
+        "label": "Vous envoyez",
+        "error": "min/max montant {{minSum}}/{{maxSum}}"
+      },
+      "youGet": {
+        "label": "Vous recevez"
+      },
+      "tagAddress": {
+        "label": "Adresse de destination tag",
+        "error": "Adresse invalide"
+      },
+      "destinationAddress": {
+        "label": "Adresse de destination",
+        "error": "Adresse invalide"
+      },
+      "emailAddress": {
+        "labelEmail": "Email",
+        "labelUser": "Identifiant d'utilisateur",
+        "error": "Email invalide"
+      },
+      "fullName": {
+        "label": "Nom complet",
+        "error": "Nom invalide"
+      },
+      "intlTelInput": {
+        "label": "Numéro de téléphone",
+        "error": "Numéro de téléphone invalide"
+      },
+      "birthday": {
+        "label": "Date de naissance",
+        "error": "Vous devez avoir {{years}} ans"
+      },
+      "cardNumber": {
+        "label": "numéro de carte",
+        "error": "numéro de carte invalide"
+      },
+      "validThru": {
+        "label": "Valable jusque",
+        "error": "Validité de la carte invalide"
+      },
+      "cvc": {
+        "label": "CVC",
+        "error": "CVC de carte invalide"
+      },
+      "fullNameCard": {
+        "label": "Nom complet",
+        "error": "Nom invalide"
+      },
+      "iAgree": {
+        "label": "J'accepte les <1> Conditions d'utilisation </1> et la <3> Politique de confidentialité</3>"
+      }
+    }
+  },
+  "status": {
+    "order": "Ordre: #{{id}}",
+    "paid": "Montant",
+    "accrualAmount": "Montant à recevoir",
+    "cryptoWalletAddress": "Adresse du portefeuille crypto",
+    "date": "Date",
+    "yourPhoneNumber": "Votre numéro de téléphone",
+    "pCompleted": "Félicitations! Votre commande est approuvée. Vous recevrez vos cryptos bientôt. En moyenne, le temps d'attente est compris entre 15 et 60 minutes.",
+    "pDeclined": "Le paiement a été annulé par votre banque. Assurez-vous de voir si votre carte supporte la technologie MasterCard SecureCode ou «Visa Visa Secure» ",
+     "pPhone": "Votre numéro de téléphone a bien été enregistré",
+    "pTimeout": "Nous sommes désolé, votre paiement a été refusé. Renseignez-vous auprès de votre banque si la fonction 3D-Secure (Visa Secure ou MasterCard SecureCode) est active sur votre carte, cela implique de saisir un code secret lors d'un paiement sur Internet. Le code est généralement envoyé sur votre téléphone.",
+    "pWaiting": "Votre paiement est en cours de traitement, ne fermez pas cette page et attendez jusqu'à 15 minutes jusqu'à ce que nous modifions le statut de la transaction.",
+    "needKycVerification": "La vérification KYC est requise",
+    "checkPhoneNumber": "Vérifiez le numéro de téléphone",
+    "savePhoneNumber": "Enregistrer le numéro de téléphone",
+    "wrongPhoneNumber": "Mauvais numéro de téléphone?",
+    "haventReceivedCall": "N'a pas reçu d'appel?",
+    "inputs": {
+      "code": {
+        "label": "Le code à 4 chiffres",
+        "error": "Code invalide"
+      },
+      "intlTelInput": {
+        "label": "Numéro de téléphone",
+        "error": "Numéro de téléphone invalide"
+      }
+    }
+  },
+  "messages": {
+    "errorFullscreenGET": "Indiquez les paramètres du partenaire dans l'URL. <1 /> Exemple: <3> {{path}} </3>",
+    "bubbledCopyAddress": "Cette adresse est copiée"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "header": {
+    "nav": {
+      "Support": "Support"
+    }
+  },
+  "footer": {
+    "hint": "Als dit de eerste keer is dat u een betaling doet met Indacoin, zult u waarschijnlijk een foto van uw identiteitsbewijs en een selfie moeten uploaden.",
+    "limits": {
+      "firstAmount": "${{minAmount}} voor {{maxAmount}}",
+      "firstTransaction": "Eerste transactie",
+      "dailyLimit": "Daglimiet",
+      "monthlyLimit": "Maandelijkse limiet"
+    }
+  },
+  "payment": {
+    "page": {
+      "buyCrypto": "Koop crypto",
+      "creditDebitCard": "met een creditcard",
+      "continue": "Verder",
+      "cancelPayment": "Annulering betaling"
+    },
+    "inputs": {
+      "youGive": {
+        "label": "Je geeft",
+        "error": "min/max bedraggled {{minSum}}/{{maxSum}}"
+      },
+      "youGet": {
+        "label": "Je snapt het"
+      },
+      "tagAddress": {
+        "label": "Endereço de destinação tag",
+        "error": "Endereço inválido"
+      },
+      "destinationAddress": {
+        "label": "Tag voor bestemmingsadres",
+        "error": "Ongeldig adres"
+      },
+      "emailAddress": {
+        "labelEmail": "Email",
+        "labelUser": "gebruikers-ID",
+        "error": "Ongeldige e-mail"
+      },
+      "fullName": {
+        "label": "Volledige naam",
+        "error": "Ongeldige naam"
+      },
+      "intlTelInput": {
+        "label": "Telefoonnummer",
+        "error": "Ongeldig telefoonnummer"
+      },
+      "birthday": {
+        "label": "Geboortedatum",
+        "error": "Je moet {{years}} jaar oud zijn"
+      },
+      "cardNumber": {
+        "label": "Kaartnummer",
+        "error": "Ongeldig kaartnummer"
+      },
+      "validThru": {
+        "label": "Geldig tot",
+        "error": "Ongeldige kaartvaliditeit"
+      },
+      "cvc": {
+        "label": "CVC",
+        "error": "Ongeldige CVC-kaart"
+      },
+      "fullNameCard": {
+        "label": "Volledige naam",
+        "error": "Ongeldige naam"
+      },
+      "iAgree": {
+        "label": "Ik ga akkoord met de <1> Gebruiksvoorwaarden </1> en <3> Privacybeleid </3>"
+      }
+    }
+  },
+  "status": {
+    "order": "Order: #{{id}}",
+    "paid": "betaald bedrag",
+    "accrualAmount": "Te ontvangen bedrag",
+    "cryptoWalletAddress": "Crypto wallet-adres",
+    "date": "Datum",
+    "yourPhoneNumber": "Uw telefoonnummer",
+    "pCompleted": "Gefeliciteerd! Uw bestelling is goedgekeurd. U ontvangt uw tokens binnenkort. De wachttijd is gemiddeld tussen de 15 en 60 minuten.",
+    "pDeclined": "De betaling is geannuleerd door uw bank. Controleer of de see-kaart MasterCard SecureCode of \"Verified Visa secure\" online betalingstechnologie ondersteunt en probeer het opnieuw.",
+    "pPhone": "Uw telefoonnummer is succesvol geverifieerd",
+    "pTimeout": "Sorry, uw betaling is geweigerd. Controleer bij uw bank of de 3D-Secure-functie (Visa-cheque of MasterCard SecureCode) actief is op uw kaart, dit houdt in dat u een geheime code invoert wanneer u via internet betaalt. De code wordt meestal naar je telefoon gestuurd.",
+    "pWaiting": "Uw betaling wordt verwerkt, sluit deze pagina niet en wacht maximaal 15 minuten totdat we de status van de transactie wijzigen.",
+    "needKycVerification": "KYC-verificatie is vereist",
+    "checkPhoneNumber": "Controleer het telefoonnummer",
+    "savePhoneNumber": "Telefoonnummer opslaan",
+    "wrongPhoneNumber": "Verkeerd telefoonnummer?",
+    "haventReceivedCall": "Geen telefoontje ontvangen?",
+    "inputs": {
+      "code": {
+        "label": "De 4-cijferige code",
+        "error": "Ongeldige code"
+      },
+      "intlTelInput": {
+        "label": "Telefoonnummer",
+        "error": "Ongeldig telefoonnummer"
+      }
+    }
+  },
+  "messages": {
+    "errorFullscreenGET": "Geef de parameters van de partner op in de URL. <1 /> Voorbeeld: <3> {{path}} </3>",
+    "bubbledCopyAddress": "Dit adres is gekopieerd"
+  }
+}

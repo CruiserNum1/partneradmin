@@ -1,0 +1,109 @@
+{
+  "header": {
+    "nav": {
+      "Support": "Destek"
+    }
+  },
+  "footer": {
+    "hint": "Indacoin'e ilk kez ödeme yapıyorsanız, kimliğinizin bir resmini ve bir selfie yüklemeniz gerekecektir.",
+    "limits": {
+      "firstAmount": "${{minAmount}} 'tan {{maxAmount}}",
+      "firstTransaction": "İlk işlem",
+      "dailyLimit": "Günlük limit",
+      "monthlyLimit": "Aylık limit"
+    }
+  },
+  "payment": {
+    "page": {
+      "buyCrypto": "Kripto para satın alın",
+      "creditDebitCard": "kredi kartı veya banka kartıyla",
+      "continue": "Devam et",
+      "cancelPayment": "Ödemeyi iptal et"
+    },
+    "inputs": {
+      "youGive": {
+        "label": "Ödeme tutarı",
+        "error": "En düşük/En yüksek tutar {{minSum}}/{{maxSum}}"
+      },
+      "youGet": {
+        "label": "Alacağınız tutar"
+      },
+      "tagAddress": {
+        "label": "Hedef etiketi adresi",
+        "error": "Geçersiz adres"
+      },
+      "destinationAddress": {
+        "label": "Hedef adres",
+        "error": "Geçersiz adres"
+      },
+      "emailAddress": {
+        "labelEmail": "E-posta adresi",
+        "labelUser": "Kullanıcı kimliği",
+        "error": "Geçersiz E-posta"
+      },
+      "fullName": {
+        "label": "Tam isim",
+        "error": "Geçersiz isim"
+      },
+      "intlTelInput": {
+        "label": "Telefon numarası",
+        "error": "Geçersiz telefon"
+      },
+      "birthday": {
+        "label": "Doğum tarihi",
+        "error": "{{years}} yaşından büyük olmalısınız"
+      },
+      "cardNumber": {
+        "label": "Kart numarası",
+        "error": "Geçersiz kart numarası"
+      },
+      "validThru": {
+        "label": "Geçerli",
+        "error": "Geçersiz son kullanma tarihi"
+      },
+      "cvc": {
+        "label": "CVC",
+        "error": "Geçersiz CVC"
+      },
+      "fullNameCard": {
+        "label": "Tam isim",
+        "error": "Geçersiz isim"
+      },
+      "iAgree": {
+        "label": "<1>Kullanım Şartlarını</1> ve <3>Gizlilik Politikasını</3> kabul ediyorum"
+      }
+    }
+  },
+  "status": {
+    "order": "Sipariş: #{{id}}",
+    "paid": "Ödendi",
+    "accrualAmount": "Artış miktarı",
+    "cryptoWalletAddress": "Kripto cüzdan adresi",
+    "date": "Tarih",
+    "yourPhoneNumber": "Telefon numaranız",
+    "pCompleted": "Tebrikler! Siparişiniz onaylandı. Yakında koinlerinizi alacaksınız. Ortalama bekleme süresi 15 ila 60 dakikadır.",
+    "pDeclined": "Ödemeniz banka tarafından reddedildi. Kartınızın MasterCard SecureCode veya Verified by Visa ile güvenli çevrimiçi ödeme teknolojisini desteklediğini doğrulayın ve tekrar deneyin.",
+    "pPhone": "Telefon numaranızı başarıyla doğruladınız",
+    "pTimeout": "Maalesef ödemeniz reddedildi. İnternet üzerinde ödeme yaparken gizli kod girmeyi içeren 3D Güvenlik işlevinin (Visa-check veya MasterCard SecureCode) etkin olup olmadığını öğrenin. Kod genellikle telefonunuza gönderilir.",
+    "pWaiting": "Ödemeniz işleme koyuluyor, bu sayfayı kapatmayın ve işlem durumunu değişene kadar 15 dakika kadar bekleyin.",
+    "needKycVerification": "KYC doğrulaması gerekli",
+    "checkPhoneNumber": "Telefon numarasını kontrol edin",
+    "savePhoneNumber": "Telefon numarasını kaydet",
+    "wrongPhoneNumber": "Yanlış telefon numarası?",
+    "haventReceivedCall": "Bir arama gelmedi mi?",
+    "inputs": {
+      "code": {
+        "label": "4 haneli kod",
+        "error": "Geçersiz kod"
+      },
+      "intlTelInput": {
+        "label": "Telefon numarası",
+        "error": "Geçersiz Telefon"
+      }
+    }
+  },
+  "messages": {
+    "errorFullscreenGET": "Lütfen URL'deki partner parametrelerini belirtin. <1/>Örnek: <3>{{path}}</3>",
+    "bubbledCopyAddress": "Adres kopyalandı"
+  }
+}

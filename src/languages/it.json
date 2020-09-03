@@ -1,0 +1,109 @@
+{
+  "header": {
+    "nav": {
+      "Support": "Support"
+    }
+  },
+  "footer": {
+    "hint": "nel caso in cui fai il primo acquisto in Indacoin, dovrai caricare un selfie e una foto del tuo documento",
+    "limits": {
+      "firstAmount": "${{minAmount}} to {{maxAmount}}",
+      "firstTransaction": "prima transazione",
+      "dailyLimit": "limite giornaliero",
+      "monthlyLimit": "limite mensile"
+    }
+  },
+  "payment": {
+    "page": {
+      "buyCrypto": "acquista crypto",
+      "creditDebitCard": "con carta di credito o debito",
+      "continue": "continua",
+      "cancelPayment": "cancella il pagamento"
+    },
+    "inputs": {
+      "youGive": {
+        "label": "tu dai",
+        "error": "min/max acquisto"
+      },
+      "youGet": {
+        "label": "tu ricevi"
+      },
+      "tagAddress": {
+        "label": "indirizzo ricevente",
+        "error": "indirizzo non valido"
+      },
+      "destinationAddress": {
+        "label": "indirizzo ricevente",
+        "error": "indirizzo non valido"
+      },
+      "emailAddress": {
+        "labelEmail": "email",
+        "labelUser": "ID utente",
+        "error": "email non valida"
+      },
+      "fullName": {
+        "label": "nome completo",
+        "error": "nome invalido"
+      },
+      "intlTelInput": {
+        "label": "numero di telefono",
+        "error": "numero non valido"
+      },
+      "birthday": {
+        "label": "data di nascita",
+        "error": "devi essere maggiorenne"
+      },
+      "cardNumber": {
+        "label": "numero carta",
+        "error": "carta non valida"
+      },
+      "validThru": {
+        "label": "valida fino a",
+        "error": "data non valida"
+      },
+      "cvc": {
+        "label": "CVC",
+        "error": "CVC non valido"
+      },
+      "fullNameCard": {
+        "label": "nome completo",
+        "error": "nome non valido"
+      },
+      "iAgree": {
+        "label": "accetto i termini di <1>uso</1> e <3>privacy</3>"
+      }
+    }
+  },
+  "status": {
+    "order": "ordine #{{id}}",
+    "paid": "pagato",
+    "accrualAmount": "ammontare",
+    "cryptoWalletAddress": "indirizzo del crypto-wallet",
+    "date": "data",
+    "yourPhoneNumber": "il tuo numero di telefono",
+    "pCompleted": "Congratulazioni! il tuo ordine e stato confermato. Tra poco riceverai le tue crypto. Tempo di attesa dai 15 minuti a 60 minuti",
+    "pDeclined": "Il pagamento e stato bloccato dalla tua banca. Controlla se la tua carta supporta MasterCard SecureCode oppure Verified by Visa e riprova",
+    "pPhone": "il numero e stato verificato con successo",
+    "pTimeout": "siamo spiacenti, il tuo pagamento non e stato accettato. Per favore controlla se l’opzione 3D-Secure e’ attiva. Questa opzione consiste nel emettere un codice mandato tramite telefono quando si fa un pagamento online.",
+    "pWaiting": "Stiamo elaborando il tuo pagamento, non chiudere questa pagina e aspetta 15 minuti fino a quando lo stato della transazione non cambia",
+    "needKycVerification": "verificarsi tramite KYC",
+    "checkPhoneNumber": "Controlla il tuo numero di telefono",
+    "savePhoneNumber": "salva il numero di telefono",
+    "wrongPhoneNumber": "numero sbagliato",
+    "haventReceivedCall": "non hai ricevuto la chiamata?",
+    "inputs": {
+      "code": {
+        "label": "codice 4-cifre",
+        "error": "codice invalido"
+      },
+      "intlTelInput": {
+        "label": "numero di telefono",
+        "error": "numero non valido"
+      }
+    }
+  },
+  "messages": {
+    "errorFullscreenGET": "per favore indica i parametri del partner nella URL: <3>{{path}}</3>",
+    "bubbledCopyAddress": "This address is copied"
+  }
+}

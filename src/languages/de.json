@@ -1,0 +1,109 @@
+{
+  "header": {
+    "nav": {
+      "Support": "Unterstützung"
+    }
+  },
+  "footer": {
+    "hint": "Wenn Sie zum ersten Mal eine Zahlung auf Indacoin leisten, müssen Sie wahrscheinlich ein Bild Ihres Personalausweises und ein Selfie hochladen.",
+    "limits": {
+      "firstAmount": "${{minAmount}} bis {{maxAmount}}",
+      "firstTransaction": "Erste Transaktion",
+      "dailyLimit": "Tageslimit",
+      "monthlyLimit": "Monatslimit"
+    }
+  },
+  "payment": {
+    "page": {
+      "buyCrypto": "Kryptowährungen kaufen",
+      "creditDebitCard": "mit Kreditkarte",
+      "continue": "Weiter",
+      "cancelPayment": "Zahlung stornieren"
+    },
+    "inputs": {
+      "youGive": {
+        "label": "Sie geben",
+        "error": "min/max betrag {{minSum}}/{{maxSum}}"
+      },
+      "youGet": {
+        "label": "Du bekommst"
+      },
+      "tagAddress": {
+        "label": "Destination tag address",
+        "error": "Invalid address"
+      },
+      "destinationAddress": {
+        "label": "Ziel Tag Adresse",
+        "error": "Ungültige Adresse"
+      },
+      "emailAddress": {
+        "labelEmail": "Email Adresse",
+        "labelUser": "User ID",
+        "error": "Ungültige Email"
+      },
+      "fullName": {
+        "label": "Vollständiger Name",
+        "error": "Ungültiger Name"
+      },
+      "intlTelInput": {
+        "label": "Telefonnummer",
+        "error": "Ungültiges Telefon"
+      },
+      "birthday": {
+        "label": "Geburtsdatum",
+        "error": "Sie müssen über {{years}} Jahre alt sein"
+      },
+      "cardNumber": {
+        "label": "Kartennummer",
+        "error": "Ungültige Kartennummer"
+      },
+      "validThru": {
+        "label": "Gültig bis",
+        "error": "Ungültiger Kartenablauf"
+      },
+      "cvc": {
+        "label": "CVC",
+        "error": "Ungültiger Karten CVC"
+      },
+      "fullNameCard": {
+        "label": "Vollständiger Name",
+        "error": "Ungültiger Name"
+      },
+      "iAgree": {
+        "label": "Ich stimme den <1> Nutzungsbedingungen </ 1> und <3> Datenschutzbestimmungen </ 3> zu."
+      }
+    }
+  },
+  "status": {
+    "order": "Order: #{{id}}",
+    "paid": "Bezahlt",
+    "accrualAmount": "Abgrenzungsbetrag",
+    "cryptoWalletAddress": "Krypto Wallet-Adresse",
+    "date": "Datum",
+    "yourPhoneNumber": "Ihre Telefonnummer",
+    "pCompleted": "Herzlichen Glückwunsch! Ihre Bestellung wurde genehmigt. Sie erhalten Ihre Münzen bald. Die durchschnittliche Wartezeit beträgt 15 bis 60 Minuten.",
+    "pDeclined": "Ihre Zahlung wurde von der Bank abgelehnt. Stellen Sie sicher, dass Ihre Karte MasterCard SecureCode oder Verified by Visa Secure Online-Zahlungstechnologie unterstützt, und versuchen Sie es erneut.",
+    "pPhone": "Sie haben Ihre Telefonnummer erfolgreich überprüft",
+    "pTimeout": "Entschuldigung, Ihre Zahlung wurde abgelehnt. Erkundigen Sie sich bei Ihrer Bank, ob die 3D-Secure-Funktion (Visa-Scheck oder MasterCard SecureCode) auf Ihrer Karte aktiviert ist. Bei der Zahlung über das Internet müssen Sie einen Geheimcode eingeben Code wird normalerweise an Ihr Telefon gesendet.",
+    "pWaiting": "Ihre Zahlung wird verarbeitet. Schließen Sie diese Seite nicht und warten Sie bis zu 15 Minuten, bis wir den Transaktionsstatus ändern.",
+    "needKycVerification": "KYC-Überprüfung erforderlich",
+    "checkPhoneNumber": "Telefonnummer prüfen",
+    "savePhoneNumber": "Telefonnummer speichern",
+    "wrongPhoneNumber": "Falsche Telefonnummer?",
+    "haventReceivedCall": "Sie haben noch keinen Anruf erhalten?",
+    "inputs": {
+      "code": {
+        "label": "Der 4-stellige Code",
+        "error": "Ungültiger digitaler Code"
+      },
+      "intlTelInput": {
+        "label": "Telefonnummer",
+        "error": "Ungültiges Telefon"
+      }
+    }
+  },
+  "messages": {
+    "errorFullscreenGET": "Bitte geben Sie die Partnerparameter in der URL an. <1 /> Beispiel: <3> {{path}} </ 3>",
+    "bubbledCopyAddress": "Diese Adresse wird kopiert"
+  }
+}

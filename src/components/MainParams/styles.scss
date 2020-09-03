@@ -1,0 +1,65 @@
+.wrapper {
+    width: 45%;
+
+    @media(max-width: 575px) {
+        & {
+            width: 100%;
+        }
+    }
+
+    @media(min-width: 576px) AND (max-width: 767px) {
+        & {
+            width: 100%;
+        }
+    }
+
+    > div {
+        background: #FFFFFF;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+        border-radius: 21px;
+        margin-bottom: 34px;
+    }
+
+    .partner {
+        text-align: center;
+        padding: 35px 20px;
+
+        > img {
+            border-radius: 50%;
+        }
+
+        > h1 {
+            margin-top: 10px;
+        }
+
+        > span {
+            margin-top: 10px;
+            display: block;
+        }
+    }
+
+    .card {
+        padding: 20px;
+
+        > div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            > div {
+                display: flex;
+                align-items: center;
+
+                > h1 {
+                    margin-left: 10px;
+                }
+            }
+
+            > span {
+                > h1 {
+                    text-align: right;
+                }
+            }
+        }
+    }
+}

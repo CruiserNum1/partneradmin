@@ -1,0 +1,60 @@
+{
+
+  "pages": {
+    "dashboard": {
+      "info": "Dashboard"
+    },
+    "reports": {
+      "info": "Reports"
+    }
+  },
+  "header": {
+    "menu": {
+      "dashboard": "Dashboard",
+      "reports": "Reports",
+      "createTransaction": "Create Transaction",
+      "settings": "Settings",
+      "faq": "FAQ"
+    }
+  },
+  "auth": {
+    "login": "Log in",
+    "signIn": "Enter your partner details",
+    "validation": {
+      "loginIncorrect": "Login/password incorrect",
+      "deletedAccount": "Deleted account",
+      "googleAuthIncorrect": "Incorrect code",
+      "emailExists": "Email already exists",
+      "invalidEmail": "Invalid email",
+      "badPassword": "Bad password",
+      "badNick": "Bad nickname",
+      "nickExists": "Nickname already exists",
+      "emailNotFound": "Email not found",
+      "linkValidity": "Check link validity"
+    }
+  },
+  "validation": {
+    "serverError": "Server error",
+    "requiredField": "Required field",
+    "incorrectEmail": "Incorrect email",
+    "invalidValue": "Invalid value",
+    "confirmField": "Confirm this field",
+    "loginBanned": "This login was banned for 1 hour",
+    "badCaptcha": "Suspicious browser",
+    "googleAuthIncorrect": "Incorrect code",
+    "incorrectPassword": "Incorrect password"
+  },
+  "partner": {
+    "enabledTill": "Enabled till:",
+    "partnerProfit": "Partner profit - ",
+    "finalCommission": "Final commission for the buyer - ",
+    "balance": "Balance",
+    "bitcoinRate": "Bitcoin rate",
+    "yourIncome": "Your income"
+  },
+  "tooltips": {
+    "userId": "UserID -  customer id in a seller system (string).",
+    "transactionId": "transactionId"
+  }
+
+}

@@ -1,0 +1,132 @@
+.input {
+    display: block;
+    width: 100%;
+    background: #F7F9FA;
+    border-radius: 37px;
+    padding: 15px 20px;
+    font-family: Gilroy;
+    font-weight: 400;
+    border: 0;
+    outline: none;
+    font-size: 1.2rem;
+}
+
+.authInput {
+    margin-top: 35px;
+}
+
+.error {
+    display: block;
+    margin-top: 10px;
+    padding-left: 20px;
+    color: red;
+    font-family: Gilroy;
+    font-size: .9rem;
+}
+
+.passwordInput {
+    margin-top: 35px;
+    width: 100%;
+    background: #F7F9FA;
+    border-radius: 37px;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    input {
+        width: 100%;
+        font-family: Gilroy;
+        border: 0;
+        background: transparent;
+        outline: 0;
+        font-size: 1.2rem;
+        font-weight: 400;
+        padding-right: .5em;
+    }
+    button {
+        display: block;
+        border: none;
+        outline: 0;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+        width: 15px;
+        background: transparent;
+        height: 13px;
+    }
+}
+
+.forgot:hover {
+    text-decoration: underline;
+}
+
+.forgot {
+    display: inline-block;
+    margin-top: 10px;
+    padding-left: 20px;
+    font-family: Gilroy;
+    font-size: .9rem;
+    color: #B5B5B5;
+    text-decoration: none;
+}
+
+.btn:hover:not(:disabled) {
+    -webkit-box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    -moz-box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    background: #2d57dc;
+}
+
+.btn {
+    display: block;
+    width: 135px;
+    padding: 8px 0;
+    text-align: center;
+    font-family: Gilroy;
+    border-radius: 19px;
+    border: 0;
+    background: #3463F8;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 30px auto 0 auto;
+    cursor: pointer;
+    outline: none;
+}
+
+.loader {
+    height: 24px;
+    svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media(max-width: 575px) {
+    .input {
+        width: 100%;
+        padding: .7em 1em;
+        border-radius: 1.7em;
+    }
+
+    .error {
+        padding-left: 1.3em;
+        margin-top: .5em;
+    }
+
+    .passwordInput {
+        width: 100%;
+        padding: .7em 1em;
+        border-radius: 1.7em;
+        margin-top: 1.5em;
+    }
+
+    .forgot {
+        padding-left: 1.3em;
+        margin-top: .5em;
+    }
+
+    .btn {
+        margin-top: 1.7em;
+    }
+}

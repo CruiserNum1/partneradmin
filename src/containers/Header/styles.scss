@@ -1,0 +1,30 @@
+.header {
+    @import "~@styles/import.scss";
+
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+    background-color: #fff;
+
+    > .wrapper {
+        &.container {
+            @include container();
+        }
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    @media(max-width: 575px) {
+        & {
+            min-height: 40px;
+        }
+    }
+
+    @media(min-width: 576px) AND (max-width: 767px) {
+        & {
+            min-height: 40px;
+        }
+    }
+}

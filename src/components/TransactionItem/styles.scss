@@ -1,0 +1,207 @@
+.transactionItem {
+    background: #F7F7F7;
+    border-radius: 21px;
+    user-select: text;
+
+    .arrowLi {
+        > img {
+            cursor: pointer;
+            transition: transform 0.25s ease-in;
+
+            // rotate arrow
+            &.show {
+                transform: rotate(-180deg);
+            }
+        }
+    }
+
+    > .collapseBlock {
+        border: 0;
+        height: 0;
+        overflow: hidden;
+        transition: all 0.25s ease-in;
+
+        > div {
+            // width: 25%;
+            // padding: 10px 10px 0 10px;
+            // border-right: 3px solid #fff;
+            display: inline-block;
+            // flex-direction: column;
+
+            &:last-child {
+                border-right: 0;
+            }
+
+            > div {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 0 0 8px 0;
+
+                h1 {
+                    font-weight: 600;
+                    text-align: center;
+                }
+
+                .btn {
+                    background: #82C9DE;
+                    border-radius: 12px;
+                    padding: 2px 6px;
+                    border: 0;
+                    outline: 0;
+                    color: #fff;
+                    cursor: pointer;
+                }
+
+                .tooltipBtn {
+                    background: #DFDFDF;
+                    position: relative;
+                    padding: 0 4px;
+
+                    > .tooltiptext {
+                        background: #FFFFFF;
+                        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+                        border-radius: 6px;
+                        font-weight: 500;
+                        color: #000;
+                        visibility: hidden;
+                        padding: 5px 0;
+                        position: absolute;
+                        min-width: 200px;
+                        z-index: 1;
+                        bottom: 135%;
+                        margin-left: -10px;
+                        opacity: 0;
+                        transition: opacity 0.6s;
+                    }
+
+                    &:hover {
+                        background: #9C9C9C;
+                    }
+
+                    &:hover .tooltiptext {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        // show
+        &.show {
+            border-top: 3px solid #fff;
+            height: auto;
+            overflow: unset;
+            margin-top: 10px;
+        }
+    }
+
+    // large screens
+    &.largeScreen {   
+        display: block;
+
+        > ul {
+            > li:nth-child(1) {
+                width: 28%;
+            }
+
+            > li:nth-child(2), > li:nth-child(3) {
+                width: 10%;
+            }
+
+            > li:nth-child(4) {
+                width: 20%;
+            }
+
+            > li:nth-child(5) {
+                width: 6%;
+            }
+
+            > li:nth-child(6) {
+                width: 7%;
+            }
+
+            > li:nth-child(7), > li:nth-child(8) {
+                width: 8%;
+            }
+
+            > li:nth-child(9) {
+                width: 3%;
+                text-align: center;
+            }
+        }
+
+        > .collapseBlock {
+            display: flex;
+
+            > div {
+                width: 25%;
+                padding: 10px 10px 0 10px;
+                border-right: 3px solid #fff;
+            }
+        }
+
+        @media(max-width: 767px) {
+            & {
+                display: none;
+            }
+        }
+    }
+
+    // mobile screen
+    &.mobileScreens {   
+        display: none;
+
+        > ul {
+            > li:nth-child(1) {
+                width: 28%;
+            }
+
+            > li:nth-child(2) {
+                width: 22%;
+            }
+
+            > li:nth-child(3) {
+                width: 12%;
+            }
+
+            > li:nth-child(4) {
+                width: 20%;
+            }
+
+            > li:nth-child(5) {
+                width: 16%;
+            }
+
+            > li:nth-child(6) {
+                width: 2%;
+            }
+        }
+
+        > .collapseBlock {
+            > div {
+                width: 50%;
+                padding: 10px 10px 0 10px;
+
+                &:nth-child(1) {
+                    border-right: 2px solid #fff;
+                    border-bottom: 2px solid #fff;
+                }
+
+                &:nth-child(2) {
+                    border-bottom: 2px solid #fff;
+                }
+
+                &:nth-child(3) {
+                    border-right: 2px solid #fff;
+                }
+            }
+        }
+
+        @media(max-width: 767px) {
+            & {
+                display: block;
+            }
+        }
+    }
+}

@@ -1,0 +1,60 @@
+{
+
+  "pages": {
+    "dashboard": {
+      "info": "Дашбоард"
+    },
+    "reports": {
+      "info": "Отчеты"
+    }
+  },
+  "header": {
+    "menu": {
+      "dashboard": "Панель",
+      "reports": "Отчеты",
+      "createTransaction": "Создать транзакцию",
+      "settings": "Настройки",
+      "faq": "FAQ"
+    }
+  },
+  "auth": {
+    "login": "Вход",
+    "signIn": "Введите данные вашего партнера",
+    "validation": {
+      "loginIncorrect": "Некорректный логин/пароль",
+      "deletedAccount": "Аккаунт был удален",
+      "googleAuthIncorrect": "Неправильный код",
+      "emailExists": "Такой email уже существует",
+      "invalidEmail": "Некорректный email",
+      "badPassword": "Плохой пароль",
+      "badNick": "Плохой ник",
+      "nickExists": "Такой ник уже существует",
+      "emailNotFound": "Email не найден",
+      "linkValidity": "Проверьте валидность ссылки"
+    }
+  },
+  "validation": {
+    "serverError": "Ошибка сервера",
+    "requiredField": "Обязательное поле",
+    "incorrectEmail": "Некорректный email",
+    "invalidValue": "Неверное значение",
+    "confirmField": "Подтвердите это поле",
+    "loginBanned": "Этот логин забанен на 1 час",
+    "badCaptcha": "Подозрительный браузер",
+    "googleAuthIncorrect": "Неправильный код",
+    "incorrectPassword": "Неправильный пароль"
+  },
+  "partner": {
+    "enabledTill": "Включен до:",
+    "partnerProfit": "Партнерская прибыль - ",
+    "finalCommission": "Окончательная комиссия для покупателя - ",
+    "balance": "Баланс",
+    "bitcoinRate": "Биткойн курс",
+    "yourIncome": "Ваш доход"
+  },
+  "tooltips": {
+    "userId": "UserID - идентификатор клиента в системе продавца (string).",
+    "transactionId": "transactionId"
+  }
+
+}

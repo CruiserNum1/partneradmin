@@ -1,0 +1,27 @@
+.wrapper {
+    margin-top: 80px;
+    background-color: #fff;
+    padding: 40px 70px;
+    border-radius: 20px;
+    .btnsContainer {
+        margin-bottom: 60px;
+
+        h1 {
+            text-align: center;
+            font-size: 1.6rem;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #05C0A5;
+        }
+    }
+}
+
+@media(max-width: 575px) {
+    .wrapper {
+        width: 90%;
+        margin: 4em auto 0 auto;
+        padding: 2.5em 1em;
+        .btnsContainer {
+            margin-bottom: 3em;
+        }
+    }
+}

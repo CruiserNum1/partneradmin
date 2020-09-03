@@ -1,0 +1,55 @@
+{
+  "default": "en",
+  "languages": [
+    {
+      "languageFull": "Český",
+      "languageShort": "cz",
+      "country": "Czech Republic"
+    },
+    {
+      "languageFull": "Deutsche",
+      "languageShort": "de",
+      "country": "Germany"
+    },
+    {
+      "languageFull": "English",
+      "languageShort": "en",
+      "country": "United Kingdom"
+    },
+    {
+      "languageFull": "Español",
+      "languageShort": "es",
+      "country": "Spain"
+    },
+    {
+      "languageFull": "Français",
+      "languageShort": "fr",
+      "country": "France"
+    },
+    {
+      "languageFull": "Italiano",
+      "languageShort": "it",
+      "country": "Italy"
+    },
+    {
+      "languageFull": "Nederlands",
+      "languageShort": "nl",
+      "country": "Netherlands"
+    },
+    {
+      "languageFull": "Português",
+      "languageShort": "pt",
+      "country": "Portugal"
+    },
+    {
+      "languageFull": "Русский",
+      "languageShort": "ru",
+      "country": "Russian Federation"
+    },
+    {
+      "languageFull": "Türk",
+      "languageShort": "tr",
+      "country": "Turkey"
+    }
+  ]
+}

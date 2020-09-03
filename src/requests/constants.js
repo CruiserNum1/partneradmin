@@ -1,0 +1,1 @@
+export const LOGIN_PARTNER = '/gw/PartnerAdmin.aspx/loginPartner' ;
