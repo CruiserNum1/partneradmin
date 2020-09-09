@@ -14,7 +14,8 @@
       "reports": "Отчеты",
       "createTransaction": "Создать транзакцию",
       "settings": "Настройки",
-      "faq": "FAQ"
+      "faq": "FAQ",
+      "logout": "Выйти"
     }
   },
   "auth": {

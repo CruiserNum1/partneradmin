@@ -6,8 +6,12 @@ import { withTranslation, Trans } from 'react-i18next';
 // components
 import TransactionItem from '@components/TransactionItem';
 
+// redux
+import { connect } from 'react-redux';
+
 class Transactions extends React.Component {
     render() {
+        console.log(this.props.transactions);
         return (
             <div className={ styles.wrapper }>
                 <div className={ styles.detailsTitle }>
@@ -99,7 +103,7 @@ class Transactions extends React.Component {
                         </li>
 
                         {
-                            this.props.data?.map((value, index) => {
+                            this.props.transactions?.map((value, index) => {
                                 return (
                                     <TransactionItem
                                         key={ index }
@@ -116,4 +120,9 @@ class Transactions extends React.Component {
     }
 }
 
-export default withTranslation()(Transactions);
+export default connect(
+    state => ({
+        transactions: JSON.parse(state.transactions.Item1)
+    }),
+    null
+)(withTranslation()(Transactions));

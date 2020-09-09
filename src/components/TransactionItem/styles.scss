@@ -16,7 +16,7 @@
     }
 
     > .collapseBlock {
-        border: 0;
+        border: 0px solid transparent;
         height: 0;
         overflow: hidden;
         transition: all 0.25s ease-in;

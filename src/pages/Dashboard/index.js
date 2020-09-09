@@ -8,10 +8,18 @@ import Header from '@containers/Header';
 import PartnerParams from '@containers/PartnerParams';
 import PartnerTransactions from '@containers/PartnerTransactions';
 
+// redux
+import { connect } from 'react-redux';
+
 // data
 import data from '../../data.json';
 
 class Index extends React.Component {
+    componentDidMount() {
+        console.log(this.props.mainParams);
+        console.log(JSON.parse(this.props.transactions.Item1));
+    }
+    
     render() {
         return (
             <div className={ styles.wrapper }>
@@ -19,7 +27,7 @@ class Index extends React.Component {
                 <main>
                     <div className={ styles.container }>
                         <PartnerParams data={ data.GetMainParams.d } />
-                        <PartnerTransactions data={ data.GetTransactions.d } />
+                        <PartnerTransactions />
                     </div>
                 </main>
             </div>
@@ -27,4 +35,10 @@ class Index extends React.Component {
     }
 }
 
-export default withTranslation()(Index);
+export default connect(
+	state => ({
+        mainParams: state.mainParams,
+        transactions: state.transactions
+	}),
+	null
+)(withTranslation()(Index));

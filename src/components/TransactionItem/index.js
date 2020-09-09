@@ -62,9 +62,7 @@ class TransactionItem extends React.Component {
                             </div>
                             <div>
                                 <h1>Extra status:</h1>
-                                <h1>
-                                    <span>{ this.props.item.requestId }</span>
-                                </h1>
+                                <span>{ this.props.item.extraStatus }</span>
                             </div>
                             <div>
                                 <h1>Verify_info:</h1>
@@ -72,7 +70,7 @@ class TransactionItem extends React.Component {
                             </div>
                             <div>
                                 <h1>RealAmountOut:</h1>
-                                <span>95</span>
+                                <span>{ this.props.item.realAmountOut }</span>
                             </div>
                         </div>
 
@@ -92,7 +90,7 @@ class TransactionItem extends React.Component {
                             </div>
                             <div>
                                 <h1>Reason:</h1>
-                                <span>value</span>
+                                <span>{ this.props.item.reason }</span>
                             </div>
                         </div>
 
@@ -104,15 +102,15 @@ class TransactionItem extends React.Component {
                             </div>
                             <div>
                                 <h1>CouponCode:</h1>
-                                <span>value</span>
+                                <span>{ this.props.item.couponCode }</span>
                             </div>
                             <div>
                                 <h1>PartnerName:</h1>
-                                <span>value</span>
+                                <span>{ this.props.item.partnerName }</span>
                             </div>
                             <div>
                                 <h1>In_convert_rate:</h1>
-                                <span>value</span>
+                                <span>{ this.props.item.in_convert_rate }</span>
                             </div>
                         </div>
 
@@ -120,7 +118,7 @@ class TransactionItem extends React.Component {
                         <div>
                             <div>
                                 <h1>cashin_type:</h1>
-                                <span>value</span>
+                                <span>{ this.props.item.cashin_type }</span>
                             </div>
                         </div>
                     </div>

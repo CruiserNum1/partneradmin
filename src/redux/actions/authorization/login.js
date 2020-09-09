@@ -15,6 +15,8 @@ export default (partnerName, secret, successCallback) => dispatch => {
             successCallback(payload);
         }
 
-        dispatch({type: ISPARTNERAUTHORIZED, payload: payload});
+        dispatch({type: ISPARTNERAUTHORIZED, payload: payload === 1 ? true : false});
+    }, (error) => {
+        dispatch({type: ISPARTNERAUTHORIZED, payload: false});
     });
 }

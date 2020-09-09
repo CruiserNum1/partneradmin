@@ -5,6 +5,10 @@ import styles from './styles.scss';
 import { withTranslation, Trans } from 'react-i18next';
 import MenuDropdown from "@components/MenuDropdown";
 
+// redux
+import { connect } from 'react-redux';
+import action_partnerLogout from "@redux/actions/authorization/logout";
+
 class Header extends React.Component {
     constructor(props) {
         super(props);
@@ -27,6 +31,15 @@ class Header extends React.Component {
         this.setState({
             showMenu: !this.state.showMenu
         }, () => document.body.style.overflowY = this.state.showMenu ? 'hidden' : 'auto');
+    }
+
+    /**
+     * Log out
+     */
+    logout(event) {
+        event.preventDefault();
+
+        this.props.action_partnerLogout();
     }
 
     render() {
@@ -117,11 +130,34 @@ class Header extends React.Component {
                                 }}
                             />
                         </li>
+                        { this.account() }
                     </ul>
                 </div>
             </div>
         );
     }
+
+    account() {
+        return (
+            <li>
+                <button
+                    className={ styles.button }
+                    onClick={ this.logout.bind(this) }
+                >
+                    <Trans i18nKey="header.menu.logout">
+                        Log out
+                    </Trans>
+                </button>
+            </li>
+        );
+    }
 }
 
-export default withTranslation()(Header);
+export default connect(
+    null,
+    dispatch => ({
+        action_partnerLogout: () => {
+            dispatch(action_partnerLogout())
+        }
+    })
+)(withTranslation()(Header));

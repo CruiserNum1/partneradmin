@@ -37,6 +37,22 @@
             padding-bottom: 2px;
         }
     }
+
+    .button {
+        display: inline-block;
+        text-align: center;
+        padding: 8px 30px;
+        border-radius: 19px;
+        border: 0;
+        background: #3463F8;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .button:focus {
+        outline: none;
+    }
 }
 
 .MenuDropdown {

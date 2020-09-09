@@ -1,7 +1,13 @@
 .wrapper {
-    width: 55%;
+    width: 53%;
 
     @media(max-width: 575px) {
+        & {
+            width: 100%;
+        }
+    }
+
+    @media(min-width: 576px) AND (max-width: 767px) {
         & {
             width: 100%;
         }

@@ -3,14 +3,24 @@ import styles from './styles.scss';
 
 import { withTranslation } from 'react-i18next';
 
+// redux
+import { connect } from 'react-redux';
+
 class MainParams extends React.Component {
+    get enabledTill() {
+        let date = new Date(parseInt(this.props.mainParams.enabledTill.slice(6, -2)));
+        return `${date.getDate()} ${date.getMonth()} ${date.getFullYear()}`;
+    }
+
     render() {
+        const { mainParams } = this.props;
+
         return (
             <div className={ styles.wrapper }>
                 <div className={ styles.partner }>
                     <img src={ require('@images/partnerLogo.svg').default } />
                     <h1>PartnerName</h1>
-                    <span>{ this.props.t('partner.enabledTill') }<br />20 March 2020</span>
+                    <span>{ this.props.t('partner.enabledTill') }<br />{ this.enabledTill }</span>
                     <span>{ this.props.t('partner.partnerProfit') }<b>3%</b></span>
                     <span>{ this.props.t('partner.finalCommission') }<b>10%</b></span>
                 </div>
@@ -46,4 +56,9 @@ class MainParams extends React.Component {
     }
 }
 
-export default withTranslation()(MainParams);
+export default connect(
+    state => ({
+        mainParams: state.mainParams
+    }),
+    null
+)(withTranslation()(MainParams));

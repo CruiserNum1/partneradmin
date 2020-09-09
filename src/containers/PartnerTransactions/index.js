@@ -8,8 +8,7 @@ class PartnerTransactions extends React.Component {
     constructor(props) {
         super(props)
 
-        this.data = JSON.parse(props.data.Item1);
-        console.log(this.data);
+        // this.data = JSON.parse(props.data.Item1);
     }
     
     render() {
@@ -21,7 +20,7 @@ class PartnerTransactions extends React.Component {
                     <input placeholder={'TransactionId'} />
                     <input placeholder={'Status'} />
                 </div>
-                <Transactions data={ this.data } />
+                <Transactions />
             </div>
         );
     }

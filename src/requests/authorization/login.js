@@ -30,13 +30,6 @@ export const partnerLogin = class extends BaseRequest {
 
             if(typeof failCallback === 'function') {
                 shift.promise.catch(failCallback);
-            } else {
-                shift.promise.catch(() => {
-                    setTimeout(() => {
-                        this.request(...shift.arguments);
-                        this.response(successCallback);
-                    }, 20000);
-                });
             }
         }
     }

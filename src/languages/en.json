@@ -14,7 +14,8 @@
       "reports": "Reports",
       "createTransaction": "Create Transaction",
       "settings": "Settings",
-      "faq": "FAQ"
+      "faq": "FAQ",
+      "logout": "Log out"
     }
   },
   "auth": {

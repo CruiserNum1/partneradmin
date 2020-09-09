@@ -1,11 +1,16 @@
 import React from 'react';
 import styles from './styles.scss';
 
+// components
+import LineChart from '@components/LineChart';
+import DonutChart from '@components/DonutChart';
+
 class ChartParams extends React.Component {
     render() {
         return (
             <div className={ styles.wrapper }>
-                <h1>ChartParams</h1>
+                <LineChart />
+                <DonutChart />
             </div>
         );
     }

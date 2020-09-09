@@ -20,6 +20,9 @@ import NotFound from '@pages/404';
 import { ROUTES, REDIRECT } from './routes';
 import Authorization from '@pages/Authorization';
 
+// containers
+import AppContainer from '@containers/AppContainer';
+
 const LANG_PARAM = '/:lang(' + languagesPattern() + ')?/';
 
 class App extends React.Component {
@@ -66,7 +69,7 @@ class App extends React.Component {
 
 		return (
 			<Switch>
-				{ this.routes(ROUTES) }
+				{ this.routes(ROUTES, AppContainer) }
 				<Route path={'*'} component={ NotFound }/>
 			</Switch>
 		);

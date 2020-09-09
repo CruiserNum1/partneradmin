@@ -1,0 +1,24 @@
+.wrapper {
+    height: 100vh;
+    background: #fff;
+
+    > div {
+        // flexbox
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-content: flex-start;
+        align-items: center;
+        > * {
+            flex: 0 1 auto;
+            text-align: center;
+        }
+
+        height: inherit;
+    }
+
+    span {
+        color: #ccc;
+    }
+}
