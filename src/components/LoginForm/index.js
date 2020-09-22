@@ -1,6 +1,9 @@
 import React from 'react';
 import styles from './styles.scss';
+
+// components
 import { withTranslation } from 'react-i18next';
+import Loader from 'react-loader-spinner';
 
 // redux
 import {connect} from "react-redux";
@@ -77,7 +80,39 @@ class LoginForm extends React.Component {
     }
 
     sendRequest(partnerName, secret) {
-        this.props.action_partnerLogin(partnerName, secret);
+        this.props.action_partnerLogin(partnerName, secret, this.loginSuccessCallback.bind(this), this.loginFailCallback.bind(this));
+    }
+
+    loginSuccessCallback(data) {
+        let loginErrors = [];
+
+        if (data === 0) {
+            loginErrors.push(this.props.t('auth.validation.loginIncorrect'));
+        }
+        
+        this.setState({
+            isLoad: false,
+            partnerName: {
+                value: this.state.partnerName.value,
+                errors: loginErrors
+            }
+        });
+    }
+
+    loginFailCallback(error) {
+        let loginErrors = [];
+
+        if (error.response.status === 500) {
+            loginErrors.push(this.props.t('auth.validation.loginIncorrect'));
+        }
+
+        this.setState({
+            isLoad: false,
+            partnerName: {
+                value: this.state.partnerName.value,
+                errors: loginErrors
+            }
+        });
     }
 
     render() {
@@ -140,9 +175,15 @@ class LoginForm extends React.Component {
                     })
                 }
 
-                <button type="submit" className={ styles.btn } onClick={ this.onSubmit.bind(this) }>
+                <button
+                    type="submit"
+                    className={ styles.btn }
+                    disabled={this.state.isLoad}
+                    onClick={ this.onSubmit.bind(this) }>
                     {
-                        this.props.t('auth.login')
+                        this.state.isLoad
+                        ? <Loader type="TailSpin" className={ styles.loader } color="#fff"/>
+                        : this.props.t('auth.login')
                     }
                 </button>
             </form>
@@ -154,8 +195,8 @@ class LoginForm extends React.Component {
 export default connect(
     null,
     dispatch => ({
-        action_partnerLogin: (partnerName, secret) => {
-            dispatch(action_partnerLogin(partnerName, secret))
+        action_partnerLogin: (partnerName, secret, successCallback, failCallback) => {
+            dispatch(action_partnerLogin(partnerName, secret, successCallback, failCallback))
         }
     })
 )(withTranslation()(LoginForm));

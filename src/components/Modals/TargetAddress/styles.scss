@@ -1,0 +1,79 @@
+.wrapper {
+    .header {
+        text-align: center;
+
+        .title {
+            font-weight: 600;
+            font-size: 28px;
+            line-height: 33px;
+            color: #000;
+        }
+
+        > button {
+            border: 0;
+            background: transparent;
+            outline: none;
+            cursor: pointer;
+            padding: 0;
+            float: right;
+        }
+    }
+
+    .content {
+        padding: 20px;
+        line-height: 25px;
+        text-align: center;
+        
+        > .curInfo {
+            text-align: center;
+            margin: 20px 0;
+            font-weight: 500;
+            font-size: 18px;
+        }
+
+        > .inputBlock {
+            text-align: left;
+            padding: 0 30px;
+
+            > input {
+                background: #F7F9FF;
+                border-radius: 23.5px;
+                outline: none;
+                border: 0;
+                padding: 10px 20px;
+                width: 100%;
+            }
+
+            > span {
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 14px;
+                color: #A9A9A9;
+                margin-left: 10px;
+            }
+
+            .maximum {
+                font-weight: 400;
+                text-decoration: underline;
+                color: #000;
+                cursor: pointer;
+            }
+        }
+
+        .button {
+            background: #3463F8;
+            border-radius: 20.5px;
+            border: 0;
+            padding: 8px 26px;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 21px;
+            line-height: 25px;
+            color: #fff;
+            margin-top: 20px;
+            outline: none;
+            cursor: pointer;
+            transition: all 0.25s;
+        }
+    }
+}

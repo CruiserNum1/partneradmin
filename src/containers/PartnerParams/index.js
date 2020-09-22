@@ -13,7 +13,7 @@ class PartnerParams extends React.Component {
     render() {
         return (
             <div className={ styles.wrapper }>
-                <MainParams data={ this.props.data } />
+                <MainParams />
                 <ChartParams />
             </div>
         );

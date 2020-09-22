@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from './styles.scss';
 
-import { withTranslation } from 'react-i18next';
+import { Trans, withTranslation } from 'react-i18next';
+import { getMonth } from './getMonth';
 
 // redux
 import { connect } from 'react-redux';
@@ -9,7 +10,7 @@ import { connect } from 'react-redux';
 class MainParams extends React.Component {
     get enabledTill() {
         let date = new Date(parseInt(this.props.mainParams.enabledTill.slice(6, -2)));
-        return `${date.getDate()} ${date.getMonth()} ${date.getFullYear()}`;
+        return `${date.getDate()} ${getMonth(date.getMonth())} ${date.getFullYear()}`;
     }
 
     render() {
@@ -24,7 +25,7 @@ class MainParams extends React.Component {
                     <span>{ this.props.t('partner.partnerProfit') }<b>3%</b></span>
                     <span>{ this.props.t('partner.finalCommission') }<b>10%</b></span>
                 </div>
-                <div className={ styles.card + ' ' + styles.balance }>
+                <div className={ styles.card }>
                     <div>
                         <div>
                             <img src={ require('@images/bitcoin.svg').default } />
@@ -33,7 +34,23 @@ class MainParams extends React.Component {
                         <span><h1>1239$</h1>10860$ was paid</span>
                     </div>
                 </div>
-                <div className={ styles.card + ' ' + styles.bitcoinRate }>
+
+                {/* modal callback */}
+                {
+                    this.props.exchangeCallback &&
+                    <a href="https://indacoin.com/auth/login" target={'_blank'} style={{ textDecoration: 'none', display: 'block', marginBottom: '20px' }}>
+                        <div
+                            className={ styles.modalBlock }
+                            // onClick={this.props.exchangeCallback} - if exchange callback
+                        >
+                            <Trans i18nKey="">
+                                Exchange to BTC and withdraw
+                            </Trans>
+                        </div>
+                    </a>
+                }
+
+                <div className={ styles.card }>
                     <div>
                         <div>
                             <img src={ require('@images/bitcoin.svg').default } />
@@ -42,7 +59,7 @@ class MainParams extends React.Component {
                         <h1>9652$</h1>
                     </div>
                 </div>
-                <div className={ styles.card + ' ' + styles.income }>
+                <div className={ styles.card }>
                     <div>
                         <div>
                             <img src={ require('@images/bitcoin.svg').default } />

@@ -27,11 +27,11 @@ class Pattern extends React.Component {
     pattern() {
         const {i18n} = this.props;
         const language = i18n.language;
-        const localStorage = window.localStorage.getItem('globalLanguage');
+        const localStorage = window.localStorage.getItem('language');
 
         const getLang = language || localStorage || i18nConfig.default;
         if(getLang !== localStorage) {
-            window.localStorage.setItem('globalLanguage', getLang);
+            window.localStorage.setItem('language', getLang);
         }
 
         if(getLang !== this.state.saveLang) {

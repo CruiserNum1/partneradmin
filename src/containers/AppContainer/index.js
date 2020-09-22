@@ -32,7 +32,7 @@ class AppContainer extends Component {
         const { mainParams, transactions } = this.props;
 
         if (mainParams && transactions) {
-            setTimeout(() => this.props.action_setLoading(false), 1500);
+            setTimeout(() => this.props.action_setLoading(false), 500);
         }
     }
 

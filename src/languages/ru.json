@@ -55,7 +55,12 @@
   },
   "tooltips": {
     "userId": "UserID - идентификатор клиента в системе продавца (string).",
-    "transactionId": "transactionId"
+    "transactionId": "transactionId",
+    "copy": "Скопировать",
+    "copied": "Скопировано"
+  },
+  "toast": {
+    "copyMessage": "Ссылка успешно скопирована"
   }
 
 }

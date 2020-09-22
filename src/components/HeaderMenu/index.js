@@ -42,6 +42,14 @@ class Header extends React.Component {
         this.props.action_partnerLogout();
     }
 
+    componentWillUnmount() {
+        document.body.style.overflowY = 'auto';
+
+        if (this.timeout !== null) {
+            clearTimeout(this.timeout);
+        }
+    }
+
     render() {
         return (
             <div className={ styles.mainWrapper }>

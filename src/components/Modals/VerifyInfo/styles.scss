@@ -1,0 +1,43 @@
+.wrapper {
+    .header {
+        text-align: center;
+
+        .title {
+            font-weight: 600;
+            font-size: 28px;
+            line-height: 33px;
+            color: #000;
+        }
+
+        > button {
+            border: 0;
+            background: transparent;
+            outline: none;
+            cursor: pointer;
+            padding: 0;
+            float: right;
+        }
+    }
+
+    .content {
+        padding: 20px;
+        line-height: 25px;
+        text-align: center;
+
+        .button {
+            background: #3463F8;
+            border-radius: 20.5px;
+            border: 0;
+            padding: 8px 26px;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 21px;
+            line-height: 25px;
+            color: #fff;
+            margin-top: 20px;
+            outline: none;
+            cursor: pointer;
+            transition: all 0.25s;
+        }
+    }
+}

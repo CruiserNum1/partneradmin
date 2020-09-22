@@ -1,7 +1,7 @@
 import { ISPARTNERAUTHORIZED } from "@redux/constants";
 import { partnerLogin } from "@requests/authorization/login";
 
-export default (partnerName, secret, successCallback) => dispatch => {
+export default (partnerName, secret, successCallback, failCallback) => dispatch => {
     const singleTon = partnerLogin.getInstance();
 
     singleTon.request(partnerName, secret);
@@ -18,5 +18,9 @@ export default (partnerName, secret, successCallback) => dispatch => {
         dispatch({type: ISPARTNERAUTHORIZED, payload: payload === 1 ? true : false});
     }, (error) => {
         dispatch({type: ISPARTNERAUTHORIZED, payload: false});
+
+        if(typeof failCallback === 'function') {
+            failCallback(error);
+        }
     });
 }

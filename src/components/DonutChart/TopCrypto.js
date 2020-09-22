@@ -43,7 +43,7 @@ class TopCrypto extends React.Component {
                                 fontFamily: 'Gilroy',
                                 fontWeight: 600,
                                 offsetY: 40,
-                                label: 'Top fiat used',
+                                label: 'Top crypto used',
                                 formatter: function(val) {
                                     return;
                                 }

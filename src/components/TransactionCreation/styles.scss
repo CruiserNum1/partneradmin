@@ -1,0 +1,191 @@
+.wrapper {
+    // flexbox
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 40px;
+
+    @media(max-width: 575px) {
+        & {
+            flex-direction: column-reverse;
+            padding: 20px;
+        }
+    }
+
+    @media(min-width: 576px) AND (max-width: 767px) {
+        & {
+            flex-direction: column-reverse;
+            padding: 20px 30px;
+        }
+    }
+
+    > .isNeeded {
+        width: 45%;
+        font-style: normal;
+        font-size: 18px;
+        line-height: 21px;
+        color: #939393;
+
+        @media(max-width: 575px) {
+            & {
+                width: 90%;
+                margin: 0 auto;
+            }
+        }
+    
+        @media(min-width: 576px) AND (max-width: 767px) {
+            & {
+                width: 60%;
+                margin: 0 auto;
+            }
+        }
+
+        > .title {
+            text-align: center;
+            margin: 20px 0;
+            font-weight: 600;
+        }
+
+        > .content {
+            font-weight: normal;
+            text-align: center;
+        }
+    }
+
+    > .creationContainer {
+        width: 45%;
+
+        @media(max-width: 575px) {
+            & {
+                width: auto;
+                margin: 0 auto;
+            }
+        }
+    
+        @media(min-width: 576px) AND (max-width: 767px) {
+            & {
+                width: auto;
+                margin: 0 auto;
+            }
+        }
+
+        > .title {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 21px;
+            margin: 0 0 15px 0;
+            text-align: center;
+        }
+
+        > form {
+
+            > ul > li {
+                position: relative;
+                padding: 10px 0;
+                // margin: 10px 0;
+                // width: 90%;
+
+                > ul.dropDown {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    z-index: 1;
+                    background: #FBFBFE;
+                    padding-top: 0;
+                    overflow: hidden;
+                    height: 0;
+                    transition: height .5s;
+                    > li {
+                        padding: .7rem 20px;
+                        background: #FBFBFE;
+                        cursor: pointer;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 16px;
+                        line-height: 19px;
+                        &:hover, &.current {
+                            background: #F2F2F4;
+                        }
+                        // &:nth-child(1) {
+                        //     margin-top: 20px;
+                        // }
+                    }
+                }
+
+                @media(max-width: 575px) {
+                    & {
+                        display: block;
+                        width: 250px;
+                        // margin: 20px auto;
+                    }
+                }
+            
+                @media(min-width: 576px) AND (max-width: 767px) {
+                    & {
+                        display: block;
+                        width: 300px;
+                        // margin: 20px auto;
+                    }
+                }
+
+                > input {
+                    width: 100%;
+                    height: 40px;
+                    padding: 0 20px;
+                    background: #F7F9FA;
+                    border-radius: 39px;
+                    border: 0;
+                    outline: 0;
+
+                    &.dropList {
+                        background-position: right 15px center;
+                        background-size: auto auto;
+                        background-repeat: no-repeat;
+                        background-image: url('~@images/drop-down.svg');
+                        text-transform: uppercase;
+                    }
+                }
+
+                > span.error {
+                    display: none;
+                    position: absolute;
+                    left: 10px;
+                    bottom: -3px;
+                    font-size: 12px;
+                    color: coral;
+
+                    &.active {
+                        display: block;
+                    }
+                }
+
+                > .button {
+                    background: #82C9DE;
+                    border-radius: 39px;
+                    text-align: center;
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 40px;
+                    color: #fff;
+                    outline: 0;
+                    border: 0;
+                    width: 100%;
+                    user-select: none;
+                    cursor: pointer;
+
+                    // loader
+                    > .loader {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        height: 40px;
+                        svg {
+                            width: 24px;
+                            height: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

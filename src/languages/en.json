@@ -55,7 +55,14 @@
   },
   "tooltips": {
     "userId": "UserID -  customer id in a seller system (string).",
-    "transactionId": "transactionId"
+    "transactionId": "transactionId",
+    "copy": "Copy",
+    "copied": "Copied"
+  },
+  "toast": {
+    "copyMessage": "Link copied successfully",
+    "updated": "updated",
+    "error": "error"
   }
 
 }

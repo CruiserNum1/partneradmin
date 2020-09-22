@@ -1,0 +1,7 @@
+.wrapper {
+    @import "~@styles/import.scss";
+
+    > main {
+        padding: 30px 0;
+    }
+}

@@ -1,0 +1,46 @@
+// Grid
+@import '~@styles/import.scss';
+
+.modal {
+    position: absolute;
+    width: 500px;
+    left: calc((100vw - 500px) / 2);
+    top: 20vh;
+    // padding-bottom: 10vh;
+    outline: none;
+
+    .container {
+        padding: 30px 20px;
+        border-radius: 20px;
+        background: #fff;
+    }
+}
+
+.modal.lg {
+    width: 90vw;
+    left: 5vw;
+}
+
+.modal.md {
+    width: 574px;
+    left: calc(50% - 290px);
+
+    @media(max-width: $max-col-sm) {
+        width: 90vw;
+        left: 5vw;
+    }
+}
+
+@media(max-width: $max-col-sm) {
+
+    .modal {
+        position: absolute;
+        width: 90vw;
+        left: 5vw;
+
+        .container {
+            padding: 10px;
+        }
+    }
+
+}

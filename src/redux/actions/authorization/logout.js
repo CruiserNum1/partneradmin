@@ -1,4 +1,4 @@
-import { ISPARTNERAUTHORIZED } from "@redux/constants";
+import { ISPARTNERAUTHORIZED, SETMAINPARAMS, SETTRANSACTIONS, SETLOADING } from "@redux/constants";
 import { partnerLogout } from "@requests/authorization/logout";
 
 export default (successCallback) => dispatch => {
@@ -16,5 +16,11 @@ export default (successCallback) => dispatch => {
         }
 
         dispatch({ type: ISPARTNERAUTHORIZED, payload: payload === 1 ? false : null });
+
+        if (payload === 1) {
+            dispatch({ type: SETLOADING, payload: true });
+            dispatch({ type: SETMAINPARAMS, payload: null });
+            dispatch({ type: SETTRANSACTIONS, payload: null });
+        }
     });
 }

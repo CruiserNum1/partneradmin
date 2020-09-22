@@ -70,6 +70,25 @@ export function changeUrl (currentLanguage, changeLanguage) {
 }
 
 export default () => {
+    let language = i18nConfig.default || 'en';
+
+    if(window.localStorage.getItem('language')) {
+        const local = window.localStorage.getItem('language').toLowerCase();
+        const find = i18nConfig.languages.find(item => item.languageShort === local);
+        if(find) {
+            language = local;
+        }
+    }
+
+    const paramsArray = location.pathname.substr(env.BASE_PATH.length).split('/');
+
+    for (let i = 0; i < i18nConfig.languages.length; i++) {
+        if (i18nConfig.languages[i].languageShort === paramsArray[0]) {
+            language = paramsArray[0];
+            break;
+        }
+    }
+
     const resources = i18nConfig.languages.reduce((result, item) => {
         try {
             return Object.assign(result, {
@@ -84,7 +103,7 @@ export default () => {
 
     const obj = {
         resources: resources,
-        lng: (window.localStorage.getItem('globalLanguage') || i18nConfig.default).toLowerCase(),
+        lng: language,
         fallbackLng: i18nConfig.default,
         interpolation: {
             escapeValue: false

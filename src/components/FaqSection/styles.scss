@@ -1,0 +1,64 @@
+.wrapper {
+    @import "~@styles/import.scss";
+
+    width: 53%;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 21px;
+    padding: 20px 80px;
+
+    @media(max-width: 575px) {
+        & {
+            width: 100%;
+            padding: 20px 30px;
+        }
+    }
+
+    @media(min-width: 576px) AND (max-width: 767px) {
+        & {
+            width: 100%;
+        }
+    }
+
+    @media(min-width: 768px) AND (max-width: 992px) {
+        & {
+            padding: 20px 30px;
+        }
+    }
+
+    > .title {
+        text-align: center;
+        font-weight: 600;
+        font-size: 18px;
+    }
+
+    > .content {
+        padding: 20px 0;
+        text-align: center;
+
+        > h2 {
+            margin: 10px 0;
+
+            > a {
+                font-style: normal;
+                font-weight: 600;
+                font-size: 18px;
+                color: #1800A9;
+            }
+        }
+
+        > .infoBlock {
+            margin-bottom: 15px;
+
+            > .h1 {
+                text-align: center;
+                font-weight: 600;
+                font-size: 18px;
+            }
+
+            > span {
+                font-size: 16px;
+            }
+        }
+    }
+}
