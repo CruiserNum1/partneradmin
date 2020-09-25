@@ -186,6 +186,22 @@
                     }
                 }
             }
+
+            .deposit {
+                // flexbox
+                display: flex;
+                align-items: center;
+
+                > input {
+                    margin: 0 10px;
+                    cursor: pointer;
+                }
+
+                > label {
+                    cursor: pointer;
+                    user-select: none;
+                }
+            }
         }
     }
 }

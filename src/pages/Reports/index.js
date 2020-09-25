@@ -1,7 +1,7 @@
 // tools
 import React from "react";
 import styles from './styles.scss';
-import { withTranslation, Trans } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
 
 // components
 import Header from '@containers/Header';

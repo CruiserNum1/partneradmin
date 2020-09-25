@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './styles.scss';
-import Chart from "react-apexcharts";
 
 // charts
 import TopFiat from './TopFiat';
@@ -64,42 +63,6 @@ class DonutChart extends React.Component {
         this.state = {
             series: [44, 55, 41]
         }
-    
-        // this.state = {
-        //   options: {
-        //     chart: {
-        //         type: 'donut'
-        //     },
-        //     plotOptions: {
-        //       pie: {
-        //         donut: {
-        //           size: '55%',
-        //           labels: {
-        //             show: true,
-        //             name: {
-        //               formatter: function (val) {
-        //                 return 'Top fiat used';
-        //               },
-        //               color: 'black',
-        //               offsetY: '12',
-        //               fontSize: '20',
-        //               fontFamily: 'Gilroy',
-        //               fontWeight: 'bold'
-        //             },
-        //             value: {
-        //               show: false
-        //             }
-        //           }
-        //         }
-        //       }
-        //     },
-        //     legend: {
-        //         position: "bottom"
-        //     }
-        //   },
-        //   series: [44, 55, 41, 17, 15],
-        //   labels: ['A', 'B', 'C', 'D', 'E']
-        // }
       }
     
     render() {

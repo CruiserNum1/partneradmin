@@ -10,6 +10,12 @@
     user-select: none;
 }
 
+.close.clearfix:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
 .menu {
     display: flex;
     align-items: center;

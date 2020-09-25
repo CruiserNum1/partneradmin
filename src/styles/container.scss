@@ -20,17 +20,22 @@
     }
     @media(min-width: $min-col-lg) AND (max-width: $min-col-xl) {
         & {
-            width: 95%;
+            width: 98%;
         }
     }
-    @media(min-width: $min-col-xl) AND (max-width: $min-col-xxl) {
+    @media(min-width: $min-col-xl) AND (max-width: $min-col-notebook) {
         & {
-            width: 95%;
+            width: 98%;
+        }
+    }
+    @media(min-width: $min-col-notebook) AND (max-width: $min-col-xxl) {
+        & {
+            width: 1200px;
         }
     }
     @media(min-width: $min-col-xxl) {
         & {
-            width: 80%;
+            width: 1200px;
         }
     }
 }

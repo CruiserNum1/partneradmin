@@ -57,7 +57,7 @@ class Header extends React.Component {
                     <img src={ require('@images/burger.svg').default } />
                 </div>
                 <div className={ styles.wrapper + ' ' + (this.state.showMenu ? styles.show : '') }>
-                    <div className={ styles.close + ' clearfix' }>
+                    <div className={ styles.close + ' ' + styles.clearfix }>
                         <img src={ require('@images/close.svg').default } onClick={ this.toggleMenu.bind(this) } />
                     </div>
                     <ul className={ styles.menu }>
@@ -114,7 +114,6 @@ class Header extends React.Component {
                                 refIgnore={ [ this.refIgnoreSpan, this.refIgnoreImg ] }
                                 items={ this.languages }
                                 selected={(index) => {
-                                    // this.changeLanguage(this.languages[index].languageShort.toLowerCase());
                                     this.props.i18n.changeLanguage(this.languages[index].languageShort.toLowerCase());
                                 }}
                                 visible={bool => bool === undefined ? this.state.showLanguages : this.setState({ showLanguages: bool })}

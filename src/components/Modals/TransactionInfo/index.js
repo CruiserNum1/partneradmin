@@ -31,6 +31,11 @@ class TransactionInfo extends React.Component {
         });
     }
 
+    get getTransactionId() {
+        const { trResult } = this.props;
+        return new URL(trResult).searchParams.get('transaction_id');
+    }
+
     render() {
         const { dataObj, trResult } = this.props;
 
@@ -43,40 +48,38 @@ class TransactionInfo extends React.Component {
                     <div className={ styles.wrapper }>
                         <div className={ styles.header }>
                             <span className={ styles.title }>
-                                <Trans i18nKey="">
+                                <Trans i18nKey="pages.createTransaction.trCreated">
                                     Transaction successfully created!
                                 </Trans>
                             </span>
-                            {/* <button onClick={(event) => {
-                                event.preventDefault();
-                                if (typeof this.props.setOpen !== 'undefined') {
-                                    this.props.setOpen();
-                                }
-                            }}>
-                                <span>&times;</span>
-                            </button> */}
                         </div>
 
                         <div className={ styles.content }>
-                        <span>TransactionId - { dataObj?.user_id }</span><br />
+                        <span>TransactionId - { this.getTransactionId }</span><br />
                             <span>UserId - { dataObj?.user_id }</span><br />
                             <span>Amount - { dataObj?.amount_in }</span><br />
+                            <span>Currency - { dataObj?.cur_in }</span><br />
                             <span>CurrencyOut - { dataObj?.cur_out }</span><br />
-                            <span>
-                                TargetAddress - <br />{ dataObj?.target_address }
-                                <button
-                                    className={ styles.copyBtn }
-                                    type="button"
-                                    onClick={() => this.copyLink(dataObj?.target_address)}
-                                >
-                                    <img width="12" height="14" src={ require('@images/icons/doc.svg').default } />
-                                    <span className={ styles.tooltiptext }>
-                                        <Trans i18nKey={`tooltips.${this.state.copyTxt}`}>
-                                            Copy
-                                        </Trans>
-                                    </span>
-                                </button>
-                            </span><br />
+                            {
+                                dataObj?.target_address &&
+                                <React.Fragment>
+                                    <span>
+                                        TargetAddress - <br />{ dataObj?.target_address }
+                                        <button
+                                            className={ styles.copyBtn }
+                                            type="button"
+                                            onClick={() => this.copyLink(dataObj?.target_address)}
+                                        >
+                                            <img width="12" height="14" src={ require('@images/icons/doc.svg').default } />
+                                            <span className={ styles.tooltiptext }>
+                                                <Trans i18nKey={`tooltips.${this.state.copyTxt}`}>
+                                                    Copy
+                                                </Trans>
+                                            </span>
+                                        </button>
+                                    </span><br />
+                                </React.Fragment>
+                            }
                             <div style={{ display: 'flex', alignItems: 'center' }}>
                                 Link: 
                                 <span

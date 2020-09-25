@@ -2,10 +2,47 @@
 
   "pages": {
     "dashboard": {
-      "info": "Dashboard"
+      "transactions": {
+        "title": "Transactions",
+        "sort": "Click on the desired option to sort.<br />To see all the options, click on the arrow.",
+        "back": "Back",
+        "forward": "Forward"
+      }
     },
     "reports": {
-      "info": "Reports"
+      "title": "Transactions and reports",
+      "downloadAs": "Download as .CSV",
+      "back": "Back",
+      "forward": "Forward"
+    },
+    "createTransaction": {
+      "title": "Transaction creation",
+      "fieldRequired": "Input field is required",
+      "createTransaction": "Create Transaction",
+      "trCreated": "Transaction successfully created!"
+    },
+    "settings": {
+      "title": "Settings",
+      "webhook": "Webhook url (for all post callbacks)",
+      "successUrl": "Success url (for user redirect after payment)",
+      "failUrl": "Fail url (for user redirect after payment)",
+      "updateCss": "Update css(need approve from manager)",
+      "updateLogo": "Update logo (width(50-200)px height(30-50)px)",
+      "exchangeToBtc": "Exchange to BTC and withdraw",
+      "chooseFile": "Choose a file",
+      "enterCss": "Enter your new css here",
+      "update": "Update",
+      "upload": "Upload"
+    },
+    "faq": {
+      "title": "FAQ",
+      "apiDocumentation": "Indacoin API Documentation",
+      "modificationPaymentTitle": "Modification of the payment page design",
+      "modificationPaymentText": "To change the design of the payment page the partner needs to upload the custom CSS file in his personal account. (https://indacoin.com/gw/partneradmin)",
+      "partnerNotificationTitle": "Partner notification about payment completion - Callback",
+      "partnerNotificationText": "After the payment confirmation, we will send you a callback to the address that has been designated in your personal account. (https://indacoin.com/gw/partneradmin)",
+      "creationPaymentTitle": "Creation of successful and failed payment pages on a partner platform",
+      "creationPaymentText": "The partner is capable to monitor the pages with successful and failed payments on his platform to where it will be redirected after the payment is processed. The links should be indicated in the personal account. (https://indacoin.com/gw/partneradmin)"
     }
   },
   "header": {
@@ -47,15 +84,31 @@
   },
   "partner": {
     "enabledTill": "Enabled till:",
-    "partnerProfit": "Partner profit - ",
-    "finalCommission": "Final commission for the buyer - ",
+    "partnerProfit": "Partner Profit - <1>{{ procent }}</1>",
+    "finalCommission": "Final commission for the buyer - <1>{{ procent }}</1>",
     "balance": "Balance",
     "bitcoinRate": "Bitcoin rate",
     "yourIncome": "Your income"
   },
   "tooltips": {
     "userId": "UserID -  customer id in a seller system (string).",
-    "transactionId": "transactionId",
+    "transactionId": "Transaction id you got in createTransaction method, one this id can have many requests (card payment attempts)",
+    "targetAddress": "Withdrawal address",
+    "createdAt": "Time of transaction creation",
+    "curIn": "Currency to pay",
+    "curOut": "Currency to get after transaction",
+    "amountIn": "Amount to pay",
+    "amountOut": "Amount will be received",
+    "partnerName": "Your partner name",
+    "extraInfo": "Info that added in createTransaction method by partner",
+    "reason": "Reason if transaction was declined",
+    "link": "Link to transaction page in indacoin system",
+    "blockchainHash": "Hash of withdrawal transaction in blockchain",
+    "realAmountOut": "Real amount of sent coins",
+    "verifyInfo": "KYC info of client if asked",
+    "extraStatus": "Status of best card payment attempt",
+    "status": "Status of transaction, is choosing like the best from all requests",
+    "requestId": "Id of best card payment attempt, can have many 3ds attempts",
     "copy": "Copy",
     "copied": "Copied"
   },
@@ -64,5 +117,5 @@
     "updated": "updated",
     "error": "error"
   }
-
+  
 }

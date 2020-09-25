@@ -93,17 +93,6 @@ class PartnerSettings extends React.Component {
         });
     }
 
-    // getBase64(file) {
-    //     var reader = new FileReader();
-    //     reader.readAsDataURL(file);
-    //     reader.onload = function () {
-    //         return reader.result;
-    //     };
-    //     reader.onerror = function (error) {
-    //         return null;
-    //     };
-    // }
-
     getBase64(file) {
         return new Promise((resolve, reject) => {
             const reader = new FileReader();
@@ -159,13 +148,17 @@ class PartnerSettings extends React.Component {
             <div className={ styles.wrapper }>
                 <ToastContainer />
                 <h1 className={ styles.title }>
-                    <Trans i18nKey="">
+                    <Trans i18nKey="pages.settings.title">
                         Settings
                     </Trans>
                 </h1>
                 <div className={ styles.content }>
                     <div className={ styles.inputBlock }>
-                        <h3>Webhook url (for all post callbacks)</h3>
+                        <h3>
+                            <Trans i18nKey="pages.settings.webhook">
+                                Webhook url (for all post callbacks)
+                            </Trans>
+                        </h3>
                         <input
                             type="text"
                             value={this.state.webhookUrl}
@@ -174,7 +167,11 @@ class PartnerSettings extends React.Component {
                         />
                     </div>
                     <div className={ styles.inputBlock }>
-                        <h3>Success url (for user redirect after payment)</h3>
+                        <h3>
+                            <Trans i18nKey="pages.settings.successUrl">
+                                Success url (for user redirect after payment)
+                            </Trans>
+                        </h3>
                         <input
                             type="text"
                             value={this.state.successUrl}
@@ -183,7 +180,11 @@ class PartnerSettings extends React.Component {
                         />
                     </div>
                     <div className={ styles.inputBlock }>
-                        <h3>Fail url (for user redirect after payment)</h3>
+                        <h3>
+                            <Trans i18nKey="pages.settings.failUrl">
+                                Fail url (for user redirect after payment)
+                            </Trans>
+                        </h3>
                         <input
                             type="text"
                             value={this.state.failUrl}
@@ -192,27 +193,51 @@ class PartnerSettings extends React.Component {
                         />
                     </div>
                     <div className={ styles.btnBlock }>
-                        <button onClick={this.updateUrls.bind(this)}>Update</button>
+                        <button onClick={this.updateUrls.bind(this)}>
+                            <Trans i18nKey="pages.settings.update">
+                                Update
+                            </Trans>
+                        </button>
                     </div>
                     <div className={ styles.inputBlock }>
-                        <h3>Update css(need approve from manager)</h3>
+                        <h3>
+                            <Trans i18nKey="pages.settings.updateCss">
+                                Update css(need approve from manager)
+                            </Trans>
+                        </h3>
                         <textarea
                             value={this.state.css}
                             onChange={(e) => this.setState({ css: e.target.value })}
-                            placeholder="Enter your new css here"
+                            placeholder={this.props.t('pages.settings.enterCss')}
                         />
                     </div>
                     <div className={ styles.btnBlock }>
-                        <button onClick={this.setPartnerCss.bind(this)}>Update</button>
+                        <button onClick={this.setPartnerCss.bind(this)}>
+                            <Trans i18nKey="pages.settings.update">
+                                Update
+                            </Trans>
+                        </button>
                     </div>
                     
-                    <h3>Update logo (width(50-200)px height(30-50)px)</h3>
+                    <h3>
+                        <Trans i18nKey="pages.settings.updateLogo">
+                            Update logo (width(50-200)px height(30-50)px)
+                        </Trans>
+                    </h3>
                     <div className={ styles.uploadBlock }>
                         <input type="file" id="file" ref={ref => this.inputFileElement = ref} onChange={this.onFileChange.bind(this)} />
                         <label htmlFor="file">
-                            <span ref={ref => this.spanElement = ref}>Choose a file</span>
+                            <span ref={ref => this.spanElement = ref}>
+                                <Trans i18nKey="pages.settings.chooseFile">
+                                    Choose a file
+                                </Trans>
+                            </span>
                         </label>
-                        <button onClick={this.logoUpload.bind(this)}>Upload</button>
+                        <button onClick={this.logoUpload.bind(this)}>
+                            <Trans i18nKey="pages.settings.upload">
+                                Upload
+                            </Trans>
+                        </button>
                     </div>
                 </div>
             </div>

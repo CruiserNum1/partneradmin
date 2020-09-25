@@ -1,4 +1,4 @@
-import { ISPARTNERAUTHORIZED } from "@redux/constants";
+import { ISPARTNERAUTHORIZED, SETPARTNERNAME } from "@redux/constants";
 import { partnerLogin } from "@requests/authorization/login";
 
 export default (partnerName, secret, successCallback, failCallback) => dispatch => {
@@ -15,6 +15,7 @@ export default (partnerName, secret, successCallback, failCallback) => dispatch 
             successCallback(payload);
         }
 
+        dispatch({type: SETPARTNERNAME, payload: partnerName});
         dispatch({type: ISPARTNERAUTHORIZED, payload: payload === 1 ? true : false});
     }, (error) => {
         dispatch({type: ISPARTNERAUTHORIZED, payload: false});

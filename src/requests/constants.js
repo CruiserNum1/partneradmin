@@ -6,3 +6,5 @@ export const CREATE_TRANSACTION     = '/gw/PartnerAdmin.aspx/CreateTransaction';
 export const UPDATE_URLS            = '/gw/PartnerAdmin.aspx/UpdateUrls';
 export const SET_PARTNER_CSS        = '/gw/PartnerAdmin.aspx/SetPartnerCSS';
 export const LOGO_UPLOAD            = '/gw/PartnerAdmin.aspx/LogoUpload';
+export const DOWNLOAD_TRANSACTIONS  = '/gw/PartnerAdmin.aspx/DownloadListedTransactions';
+export const GET_FULL_URL           = '/gw/PartnerAdmin.aspx/GetFullUrl';

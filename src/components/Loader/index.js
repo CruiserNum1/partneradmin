@@ -37,7 +37,6 @@ class Loader extends React.Component {
             <div className={ styles.wrapper }>
                 <div>
                     <div>
-                        {/* <img width={165} height={22} src={require('@images/indacoin.svg').default} alt="indacoin-logo" /> */}
                         <object ref={ref => this.object = ref} type="image/svg+xml" data={require('@images/logo.svg').default}/>
                         <br /><span>Loading...</span>
                     </div>

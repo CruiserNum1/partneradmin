@@ -1,7 +1,7 @@
 import BaseRequest from "@requests";
-import { GET_TRANSACTIONS } from '../constants';
+import { GET_FULL_URL } from '../constants';
 
-export const getTransactions = class extends BaseRequest {
+export const getFullUrl = class extends BaseRequest {
     /**
      * For single ton
      */
@@ -48,7 +48,7 @@ export const getTransactions = class extends BaseRequest {
         this._dataCallback.push({
             arguments: arguments,
             promise: new Promise((resolve, reject) => {
-                this.post(GET_TRANSACTIONS, dataObj).then((response) => {
+                this.post(GET_FULL_URL, dataObj).then((response) => {
                     if(typeof response['data'] !== 'undefined') {
                         resolve(response['data']);
                     } else {

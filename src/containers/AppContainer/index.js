@@ -12,7 +12,6 @@ import { connect } from 'react-redux';
 // components
 import Loader from '@components/Loader';
 
-
 class AppContainer extends Component {
     constructor (props) {
         super(props);
@@ -24,7 +23,10 @@ class AppContainer extends Component {
         }
 
         if (this.props.transactions === null) {
-            this.props.action_getTransactions();
+            let dataObj = {
+                info: {}
+            };
+            this.props.action_getTransactions(dataObj);
         }
     }
 
@@ -55,8 +57,8 @@ export default connect(
         action_getMainParams: () => {
             dispatch(action_getMainParams())
         },
-        action_getTransactions: () => {
-            dispatch(action_getTransactions())
+        action_getTransactions: (dataObj) => {
+            dispatch(action_getTransactions(dataObj))
         },
         action_setLoading: (state) => {
             dispatch(action_setLoading(state))

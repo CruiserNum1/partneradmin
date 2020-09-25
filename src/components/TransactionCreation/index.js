@@ -43,6 +43,7 @@ class TransactionCreation extends React.Component {
             searchValue: this.initSearchValue ,
             currentCurrency: this.currentCurrency,
             currentCurrencyNum: -1,
+            isDeposit: false
         };
     }
 
@@ -70,20 +71,6 @@ class TransactionCreation extends React.Component {
         if(mobgetcurrenciesinfo) {
             try {
                 let items = mobgetcurrenciesinfo.result.filter(item => item.cur_id >= 100).map(item => item.short_name);
-
-                // if(window.INTT === undefined) {
-                //     window.INTT = (boolean) => {
-                //         let INTT = this.state.INTT !== undefined ? this.state.INTT : false;
-                //         if(boolean !== undefined) {
-                //             this.setState({INTT: boolean});
-                //         }
-                //         return INTT;
-                //     }
-                // }
-                // if(!window.INTT()) {
-                //     items.splice(items.indexOf('INTT'), 1);
-                // }
-
                 return items;
             } catch(e) {
                 console.log(e);
@@ -98,20 +85,6 @@ class TransactionCreation extends React.Component {
         if(mobgetcurrenciesinfo) {
             try {
                 let items = mobgetcurrenciesinfo.result.filter(item => item.cur_id >= 100).map(item => item.short_name);
-
-                // if(window.INTT === undefined) {
-                //     window.INTT = (boolean) => {
-                //         let INTT = this.state.INTT !== undefined ? this.state.INTT : false;
-                //         if(boolean !== undefined) {
-                //             this.setState({INTT: boolean});
-                //         }
-                //         return INTT;
-                //     }
-                // }
-                // if(!window.INTT()) {
-                //     items.splice(items.indexOf('INTT'), 1);
-                // }
-
                 return items;
             } catch(e) {
                 console.log(e);
@@ -137,18 +110,28 @@ class TransactionCreation extends React.Component {
      * @param target
      */
     onSubmit(target) {
+        const { isDeposit } = this.state;
         let form = () => {
             let formObject = Object.assign(...[...target.querySelectorAll('input')].map(tag => new Object({[tag.dataset.key]:tag.value})));
             let spanQS = target.querySelectorAll(`span.${styles.error}`);
+            let isValid = isDeposit ?
+                    {
+                        userId: formObject.userId,
+                        currency: formObject.currency,
+                        amount: formObject.amount
+                    }
+                    :
+                    {
+                        userId: formObject.userId,
+                        currency: formObject.currency,
+                        amount: formObject.amount,
+                        currencyOut: formObject.currencyOut,
+                        targetAddress: formObject.targetAddress,
+                    };
+            
             return {
                 formObject: formObject,
-                isValid: {
-                    userId: formObject.userId,
-                    currency: formObject.currency,
-                    amount: formObject.amount,
-                    currencyOut: formObject.currencyOut,
-                    targetAddress: formObject.targetAddress,
-                },
+                isValid: isValid,
                 errorTag: spanQS
             }
         }
@@ -164,11 +147,13 @@ class TransactionCreation extends React.Component {
             this.dataObj = {
                 amount_in: formObject.amount,
                 cur_in: formObject.currency,
-                cur_out: formObject.currencyOut,
-                target_address: formObject.targetAddress,
                 user_id: formObject.userId,
                 coupon_code: ""
             };
+
+            // if deposit
+            this.dataObj['cur_out'] = isDeposit ? formObject.currency : formObject.currencyOut;
+            this.dataObj['target_address'] = isDeposit ? "" : formObject.targetAddress;
             
             // create transaction request
             this.createTransactionInstance.request(this.dataObj);
@@ -264,7 +249,7 @@ class TransactionCreation extends React.Component {
 
                 <div className={ styles.creationContainer }>
                     <h1 className={ styles.title }>
-                        <Trans i18nKey="">
+                        <Trans i18nKey="pages.createTransaction.title">
                             Transaction creation
                         </Trans>
                     </h1>
@@ -273,7 +258,7 @@ class TransactionCreation extends React.Component {
                             <li>
                                 <input data-key="userId" type="text" placeholder="UserID" />
                                 <span data-key="userId" className={styles.error}>
-                                    <Trans i18nKey="listing.form.fieldRequired">
+                                    <Trans i18nKey="pages.createTransaction.fieldRequired">
                                         Input field is required
                                     </Trans>
                                 </span>
@@ -285,36 +270,6 @@ class TransactionCreation extends React.Component {
                                     currencyList={ this.getCurrencyList }
                                     styles={ styles }
                                 />
-                                {/* <input
-                                    data-key="currency"
-                                    className={styles.dropList}
-                                    style={{"position": "relative", "zIndex": "2"}}
-                                    value={this.state.currency}
-                                    onChange={e => this.setState({ currency: e.target.value })}
-                                    type="text"
-                                    placeholder="Currency"
-                                    data-droplist-name="currency"
-                                    onClick={e => this.dropDown(e.target)}
-                                />
-                                <span data-key="currency" className={styles.error}>
-                                    <Trans i18nKey="listing.form.fieldRequired">
-                                        Input field is required
-                                    </Trans>
-                                </span>
-                                <ul id="currency" className={styles.dropDown}>
-                                    {
-                                        this.state.currenciesList.map((value, index) => {
-                                            return (
-                                                <li
-                                                    key={index}
-                                                    onClick={() => this.inputValue({ currency: value })}
-                                                >
-                                                    { value }
-                                                </li>
-                                            );
-                                        })
-                                    }
-                                </ul> */}
                             </li>
                             <li>
                                 <input
@@ -324,27 +279,41 @@ class TransactionCreation extends React.Component {
                                     onKeyPress={ this.onValueInputKeyPress }
                                 />
                                 <span data-key="amount" className={styles.error}>
-                                    <Trans i18nKey="listing.form.fieldRequired">
+                                    <Trans i18nKey="pages.createTransaction.fieldRequired">
                                         Input field is required
                                     </Trans>
                                 </span>
                             </li>
-                            <li>
-                                <CurrenciesInput
-                                    item={'currencyOut'}
-                                    placeholder={'Currency out'}
-                                    currencyList={ this.getCurrencyOutList }
-                                    styles={ styles }
-                                />
-                            </li>
-                            <li>
-                                <input data-key="targetAddress" type="text" placeholder="Target address" />
-                                <span data-key="targetAddress" className={styles.error}>
-                                    <Trans i18nKey="listing.form.fieldRequired">
-                                        Input field is required
-                                    </Trans>
-                                </span>
-                            </li>
+                            <div className={ styles.deposit }>
+                                <input
+                                    type={'checkbox'}
+                                    id="deposit"
+                                    value={this.state.isDeposit}
+                                    onChange={(e) => this.setState({ isDeposit: e.target.checked})} />
+                                <label htmlFor="deposit">Use deposit scheme</label>
+                            </div>
+                            {
+                                !this.state.isDeposit &&
+                                <li>
+                                    <CurrenciesInput
+                                        item={'currencyOut'}
+                                        placeholder={'Currency out'}
+                                        currencyList={ this.getCurrencyOutList }
+                                        styles={ styles }
+                                    />
+                                </li>
+                            }
+                            {
+                                !this.state.isDeposit &&
+                                <li>
+                                    <input data-key="targetAddress" type="text" placeholder="Target address" />
+                                    <span data-key="targetAddress" className={styles.error}>
+                                        <Trans i18nKey="pages.createTransaction.fieldRequired">
+                                            Input field is required
+                                        </Trans>
+                                    </span>
+                                </li>
+                            }
                             <li>
                                 <button
                                     className={ styles.button }
@@ -354,7 +323,7 @@ class TransactionCreation extends React.Component {
                                     {
                                         this.state.isLoad
                                         ? <Loader type="TailSpin" className={styles.loader} color="#fff"/>
-                                        : <Trans i18nKey="">
+                                        : <Trans i18nKey="pages.createTransaction.createTransaction">
                                             Create Transaction
                                         </Trans>
                                     }

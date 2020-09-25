@@ -3,8 +3,6 @@ import styles from './styles.scss';
 
 // components
 import Header from '@containers/Header';
-import MainParams from '@components/MainParams';
-import PartnerSettings from '@components/PartnerSettings';
 
 // containers
 import SettingsContainer from '@containers/SettingsContainer';

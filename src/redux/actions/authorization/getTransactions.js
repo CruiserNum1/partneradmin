@@ -1,10 +1,10 @@
 import { SETTRANSACTIONS } from "@redux/constants";
 import { getTransactions } from "@requests/authorization/getTransactions";
 
-export default (successCallback) => dispatch => {
+export default (dataObj, successCallback) => dispatch => {
     const singleTon = getTransactions.getInstance();
 
-    singleTon.request();
+    singleTon.request(dataObj);
 
     singleTon.response((data) => {
         const payload = data.d;

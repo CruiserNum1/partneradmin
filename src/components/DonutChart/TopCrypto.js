@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './styles.scss';
 import Chart from "react-apexcharts";
 
 class TopCrypto extends React.Component {
