@@ -8,7 +8,7 @@ import { Trans, withTranslation } from 'react-i18next';
 
 const clipboard = Clipboard.getInstance();
 
-class TargetAddress extends React.Component {
+class GetLink extends React.Component {
     constructor(props) {
         super(props);
 
@@ -32,8 +32,6 @@ class TargetAddress extends React.Component {
     }
 
     render() {
-        const data = JSON.parse(this.props.data);
-
         return (
             <React.Fragment>
                 <Modal
@@ -53,14 +51,14 @@ class TargetAddress extends React.Component {
                             </button>
                             <span className={ styles.title }>
                                 <Trans i18nKey="">
-                                    Target address
+                                    Link
                                 </Trans>
                             </span>
                         </div>
 
                         <div className={ styles.content }>
-                            <b>Address: </b><span>{data.btcAddress}</span><br />
-                            <button className={ styles.button } onClick={() => this.copyLink(data.btcAddress)}>
+                            <b>Link: </b><span>{this.props.data}</span><br />
+                            <button className={ styles.button } onClick={() => this.copyLink(this.props.data)}>
                                 { this.props.t(`tooltips.${this.state.copyTxt}`) }
                             </button>
                         </div>
@@ -71,4 +69,4 @@ class TargetAddress extends React.Component {
     }
 }
 
-export default withTranslation()(TargetAddress);
+export default withTranslation()(GetLink);

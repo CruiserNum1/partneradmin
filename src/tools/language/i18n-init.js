@@ -38,7 +38,7 @@ export function generateLanguageUrl(language) {
 }
 
 /**
- * Chnage url with language
+ * Change url with language
  *
  * @param currentLanguage
  * @param changeLanguage

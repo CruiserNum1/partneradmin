@@ -1,7 +1,7 @@
 import BaseRequest from "@requests";
-import { MOBGETCURRENCIESINFO } from './constants';
+import { GETCASHINFO } from './constants';
 
-export const mobgetcurrenciesinfo = class extends BaseRequest {
+export const getCashInfo = class extends BaseRequest {
     /**
      * For single ton
      */
@@ -43,12 +43,15 @@ export const mobgetcurrenciesinfo = class extends BaseRequest {
 
     /**
      * Request
+     *
+     * @param currency
+     * @param address
      */
     request() {
         this._dataCallback.push({
             arguments: arguments,
             promise: new Promise((resolve, reject) => {
-                this.get(MOBGETCURRENCIESINFO).then((response) => {
+                this.get(GETCASHINFO).then((response) => {
                     if (typeof response['data'] !== 'undefined') {
                         resolve(response['data']);
                     } else {

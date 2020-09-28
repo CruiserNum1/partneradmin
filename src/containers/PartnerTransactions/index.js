@@ -28,6 +28,31 @@ class PartnerTransactions extends React.Component {
         };
     }
 
+    searchTransactions() {
+        let dataObj = {
+            info: {
+                limit: this.state.limit,
+                status: this.state.status,
+                trans_id: this.state.transactionId,
+                user_id: this.state.userName
+            }
+        };
+
+        this.setState({ showLoader: true });
+        getTransactionsInstance.request(dataObj);
+        getTransactionsInstance.response(res => {
+            if (res?.d?.Item1) {
+                let transactionsResult = JSON.parse(res.d.Item1);
+
+                this.setState({
+                    transactions: transactionsResult,
+                    page: 0,
+                    showLoader: false
+                })
+            }
+        });
+    }
+
     backButtonClick() {
         if (!this.state.page) {
             return;
@@ -101,10 +126,19 @@ class PartnerTransactions extends React.Component {
                     </Trans>
                 </h1>
                 <div className={ styles.inputContainers }>
-                    <input placeholder={'UserName'} />
-                    <input placeholder={'TransactionId'} />
-                    <input placeholder={'Status'} />
+                    <input placeholder={'UserName'} value={this.state.userName} onChange={(e) => this.setState({userName: e.target.value})} />
+                    <input placeholder={'TransactionId'} value={this.state.transactionId} onChange={(e) => this.setState({transactionId: e.target.value})} />
+                    <input placeholder={'Status'} value={this.state.status} onChange={(e) => this.setState({status: e.target.value})} />
+                    <input placeholder={'Limit'} value={this.state.limit} onChange={(e) => this.setState({limit: e.target.value})} />
                 </div>
+                <button
+                    className={ styles.button }
+                    onClick={this.searchTransactions.bind(this)}
+                >
+                    <Trans i18nKey="pages.dashboard.transactions.search">
+                        Search
+                    </Trans>
+                </button>
                 <Transactions transactions={this.state.transactions} showLoader={this.state.showLoader} />
                 <div className={ styles.pagination }>
                     <button

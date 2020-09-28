@@ -18,7 +18,7 @@ class MainParams extends React.Component {
             <div className={ styles.wrapper }>
                 <div className={ styles.partner }>
                     <img src={ require('@images/partnerLogo.svg').default } />
-                    <span><b>Partner name: </b>{this.props.partnerName}</span>
+                    <span><b>{this.props.t("partner.name")} </b>{this.props.partnerName}</span>
                     <span>{ this.props.t('partner.enabledTill') }<br />{ this.enabledTill }</span>
                     <span>
                         <Trans i18nKey="partner.partnerProfit">

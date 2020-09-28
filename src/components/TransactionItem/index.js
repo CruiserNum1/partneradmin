@@ -7,11 +7,15 @@ import { withTranslation, Trans } from 'react-i18next';
 import VerifyInfo from '@components/Modals/VerifyInfo';
 import TargetAddress from '@components/Modals/TargetAddress';
 import GetUrl from '@components/Modals/GetUrl';
+import GetCallback from '@components/Modals/GetCallback';
+import GetLink from '@components/Modals/GetLink';
 
 // requests
 import { getFullUrl } from '@requests/partner/getFullUrl';
+import { sendNotification } from '@requests/partner/sendNotification';
 
 const getFullUrlInstance = getFullUrl.getInstance();
+const sendNotificationInstance = sendNotification.getInstance();
 
 class TransactionItem extends React.Component {
     constructor(props) {
@@ -23,6 +27,7 @@ class TransactionItem extends React.Component {
         };
 
         this.getUrlResult = null;
+        this.callbackResult = null;
     }
 
     showAnswerLarge(event) {
@@ -51,6 +56,21 @@ class TransactionItem extends React.Component {
         })
     }
 
+    getCallback() {
+        let dataObj = {
+            requestId: this.props.item.requestId
+        };
+
+        sendNotificationInstance.request(dataObj);
+        sendNotificationInstance.response(res => {
+            if (res?.d) {
+                const response = JSON.parse(res.d).response;
+                this.callbackResult = response;
+                this.setState({ type: 'getCallback', showModal: true });
+            }
+        })
+    }
+
     /**
      * Render modals
      *
@@ -63,6 +83,18 @@ class TransactionItem extends React.Component {
             case 'getUrl':
                 return <GetUrl
                     data={this.getUrlResult}
+                    open={this.state.showModal}
+                    setOpen={() => this.setState({ showModal: false })}
+                />;
+            case 'getCallback':
+                return <GetCallback
+                    data={this.callbackResult}
+                    open={this.state.showModal}
+                    setOpen={() => this.setState({ showModal: false })}
+                />;
+            case 'getLink':
+                return <GetLink
+                    data={item.link}
                     open={this.state.showModal}
                     setOpen={() => this.setState({ showModal: false })}
                 />;
@@ -139,7 +171,16 @@ class TransactionItem extends React.Component {
                                 :</h1>
                                 <h1>
                                     <span>{ item.requestId }</span><br />
-                                    <button type={'button'} className={ styles.btn + ' ' + styles.button }>Callback</button>
+                                    {
+                                        item.requestId !== -1 &&
+                                        <button
+                                            type={'button'}
+                                            className={ styles.btn + ' ' + styles.button }
+                                            onClick={this.getCallback.bind(this)}
+                                        >
+                                            Callback
+                                        </button>
+                                    }
                                 </h1>
                             </div>
                             <div>
@@ -194,13 +235,16 @@ class TransactionItem extends React.Component {
                                         </span>
                                     </button>
                                 :</h1>
-                                <button
-                                    type={'button'}
-                                    className={ styles.btn }
-                                    onClick={ () => this.setState({ type: 'targetAddress', showModal: true }) }
-                                >
-                                    ?
-                                </button>
+                                {
+                                    item.targetAddress &&
+                                    <button
+                                        type={'button'}
+                                        className={ styles.btn }
+                                        onClick={ () => this.setState({ type: 'targetAddress', showModal: true }) }
+                                    >
+                                        ?
+                                    </button>
+                                }
                             </div>
                             <div>
                                 <h1>BlockchainHash <button className={ styles.btn + ' ' + styles.tooltipBtn }>?
@@ -211,7 +255,10 @@ class TransactionItem extends React.Component {
                                         </span>
                                     </button>
                                 :</h1>
-                                <button type={'button'} className={ styles.btn }>?</button>
+                                {
+                                    item.blockchainHash &&
+                                    <button type={'button'} className={ styles.btn }>?</button>
+                                }
                             </div>
                             <div>
                                 <h1>Link <button className={ styles.btn + ' ' + styles.tooltipBtn }>?
@@ -222,7 +269,13 @@ class TransactionItem extends React.Component {
                                         </span>
                                     </button>
                                 :</h1>
-                                <button type={'button'} className={ styles.btn }>?</button>
+                                <button
+                                    type={'button'}
+                                    className={ styles.btn }
+                                    onClick={ () => this.setState({ type: 'getLink', showModal: true }) }
+                                >
+                                    ?
+                                </button>
                             </div>
                             <div>
                                 <h1>Reason <button className={ styles.btn + ' ' + styles.tooltipBtn }>?
@@ -248,7 +301,7 @@ class TransactionItem extends React.Component {
                                         </span>
                                     </button>
                                 :</h1>
-                                <span>value</span>
+                                <span></span>
                             </div>
                             <div>
                                 <h1>CouponCode:</h1>
@@ -325,7 +378,16 @@ class TransactionItem extends React.Component {
                                 :</h1>
                                 <h1>
                                     <span>{ item.requestId }</span><br />
-                                    <button type={'button'} className={ styles.btn + ' ' + styles.button }>Callback</button>
+                                    {
+                                        item.requestId !== -1 &&
+                                        <button
+                                            type={'button'}
+                                            className={ styles.btn + ' ' + styles.button }
+                                            onClick={this.getCallback.bind(this)}
+                                        >
+                                            Callback
+                                        </button>
+                                    }
                                 </h1>
                             </div>
                             <div>
@@ -338,7 +400,7 @@ class TransactionItem extends React.Component {
                                     </button>
                                 :</h1>
                                 <h1>
-                                    <span>{ item.requestId }</span>
+                                    <span>{ item.extraStatus }</span>
                                 </h1>
                             </div>
                             <div>
@@ -350,7 +412,13 @@ class TransactionItem extends React.Component {
                                         </span>
                                     </button>
                                 :</h1>
-                                <button type={'button'} className={ styles.btn }>?</button>
+                                <button
+                                    type={'button'}
+                                    className={ styles.btn }
+                                    onClick={ () => this.setState({ type: 'verifyInfo', showModal: true }) }
+                                >
+                                    ?
+                                </button>
                             </div>
                             <div>
                                 <h1>RealAmountOut <button className={ styles.btn + ' ' + styles.tooltipBtn }>?
@@ -361,7 +429,7 @@ class TransactionItem extends React.Component {
                                         </span>
                                     </button>
                                 :</h1>
-                                <span>95</span>
+                                <span>{ item.realAmountOut }</span>
                             </div>
                         </div>
 
@@ -376,7 +444,16 @@ class TransactionItem extends React.Component {
                                         </span>
                                     </button>
                                 :</h1>
-                                <button type={'button'} className={ styles.btn }>?</button>
+                                {
+                                    item.targetAddress &&
+                                    <button
+                                        type={'button'}
+                                        className={ styles.btn }
+                                        onClick={ () => this.setState({ type: 'targetAddress', showModal: true }) }
+                                    >
+                                        ?
+                                    </button>
+                                }
                             </div>
                             <div>
                                 <h1>BlockchainHash <button className={ styles.btn + ' ' + styles.tooltipBtn }>?
@@ -387,7 +464,10 @@ class TransactionItem extends React.Component {
                                         </span>
                                     </button>
                                 :</h1>
-                                <button type={'button'} className={ styles.btn }>?</button>
+                                {
+                                    item.blockchainHash &&
+                                    <button type={'button'} className={ styles.btn }>?</button>
+                                }
                             </div>
                             <div>
                                 <h1>Link <button className={ styles.btn + ' ' + styles.tooltipBtn }>?
@@ -398,7 +478,13 @@ class TransactionItem extends React.Component {
                                         </span>
                                     </button>
                                 :</h1>
-                                <button type={'button'} className={ styles.btn }>?</button>
+                                <button
+                                    type={'button'}
+                                    className={ styles.btn }
+                                    onClick={ () => this.setState({ type: 'getLink', showModal: true }) }
+                                >
+                                    ?
+                                </button>
                             </div>
                             <div>
                                 <h1>Reason <button className={ styles.btn + ' ' + styles.tooltipBtn }>?
@@ -409,7 +495,7 @@ class TransactionItem extends React.Component {
                                         </span>
                                     </button>
                                 :</h1>
-                                <span>value</span>
+                                <span>{ item.reason }</span>
                             </div>
                         </div>
 
@@ -424,11 +510,11 @@ class TransactionItem extends React.Component {
                                         </span>
                                     </button>
                                 :</h1>
-                                <span>value</span>
+                                <span></span>
                             </div>
                             <div>
                                 <h1>CouponCode:</h1>
-                                <span>value</span>
+                                <span>{ item.couponCode }</span>
                             </div>
                             <div>
                                 <h1>PartnerName <button className={ styles.btn + ' ' + styles.tooltipBtn }>?
@@ -439,11 +525,11 @@ class TransactionItem extends React.Component {
                                         </span>
                                     </button>
                                 :</h1>
-                                <span>value</span>
+                                <span>{ item.partnerName }</span>
                             </div>
                             <div>
                                 <h1>In_convert_rate:</h1>
-                                <span>value</span>
+                                <span>{ item.in_convert_rate }</span>
                             </div>
                         </div>
 
@@ -451,7 +537,7 @@ class TransactionItem extends React.Component {
                         <div>
                             <div>
                                 <h1>cashin_type:</h1>
-                                <span>value</span>
+                                <span>{ item.cashin_type }</span>
                             </div>
                             <div>
                                 <h1>CreatedAt <button className={ styles.btn + ' ' + styles.tooltipBtn }>?
@@ -462,7 +548,7 @@ class TransactionItem extends React.Component {
                                         </span>
                                     </button>
                                 :</h1>
-                                <span>value</span>
+                                <span>{ item.createdAt }</span>
                             </div>
                             <div>
                                 <h1>CurOut <button className={ styles.btn + ' ' + styles.tooltipBtn }>?
@@ -473,7 +559,7 @@ class TransactionItem extends React.Component {
                                         </span>
                                     </button>
                                 :</h1>
-                                <span>BTC</span>
+                                <span>{ item.curOut }</span>
                             </div>
                             <div>
                                 <h1>AmountOut <button className={ styles.btn + ' ' + styles.tooltipBtn }>?
@@ -484,7 +570,7 @@ class TransactionItem extends React.Component {
                                         </span>
                                     </button>
                                 :</h1>
-                                <span>95</span>
+                                <span>{ item.amountOut }</span>
                             </div>
                         </div>
                     </div>

@@ -1,7 +1,7 @@
 import BaseRequest from "@requests";
-import { MOBGETCURRENCIESINFO } from './constants';
+import { SEND_NOTIFICATION } from '../constants';
 
-export const mobgetcurrenciesinfo = class extends BaseRequest {
+export const sendNotification = class extends BaseRequest {
     /**
      * For single ton
      */
@@ -44,18 +44,18 @@ export const mobgetcurrenciesinfo = class extends BaseRequest {
     /**
      * Request
      */
-    request() {
+    request(dataObj) {
         this._dataCallback.push({
             arguments: arguments,
             promise: new Promise((resolve, reject) => {
-                this.get(MOBGETCURRENCIESINFO).then((response) => {
-                    if (typeof response['data'] !== 'undefined') {
+                this.post(SEND_NOTIFICATION, dataObj).then((response) => {
+                    if(typeof response['data'] !== 'undefined') {
                         resolve(response['data']);
                     } else {
                         reject(response);
                     }
-                }).catch((e) => {
-                    reject(e);
+                }).catch((error) => {
+                    reject(error);
                 });
             })
         });

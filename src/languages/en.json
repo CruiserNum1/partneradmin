@@ -6,7 +6,8 @@
         "title": "Transactions",
         "sort": "Click on the desired option to sort.<br />To see all the options, click on the arrow.",
         "back": "Back",
-        "forward": "Forward"
+        "forward": "Forward",
+        "search": "Search"
       }
     },
     "reports": {
@@ -19,7 +20,8 @@
       "title": "Transaction creation",
       "fieldRequired": "Input field is required",
       "createTransaction": "Create Transaction",
-      "trCreated": "Transaction successfully created!"
+      "trCreated": "Transaction successfully created!",
+      "depositScheme": "Use deposit scheme"
     },
     "settings": {
       "title": "Settings",
@@ -83,6 +85,7 @@
     "incorrectPassword": "Incorrect password"
   },
   "partner": {
+    "name": "Partner name:",
     "enabledTill": "Enabled till:",
     "partnerProfit": "Partner Profit - <1>{{ procent }}</1>",
     "finalCommission": "Final commission for the buyer - <1>{{ procent }}</1>",

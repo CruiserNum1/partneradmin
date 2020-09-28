@@ -17,12 +17,12 @@
     }
 
     > .inputContainers {
-        margin: 20px auto;
+        margin: 10px auto;
         text-align: center;
 
         > input {
             padding: 10px 20px;
-            margin: 0 5px;
+            margin: 5px;
             background: #F7F9FA;
             border-radius: 39px;
             border: 0;
@@ -42,6 +42,34 @@
                     width: 300px;
                     margin: 20px auto;
                 }
+            }
+        }
+    }
+
+    .button {
+        display: block;
+        background: #82C9DE;
+        border-radius: 39px;
+        padding: 10px 20px;
+        border: 0;
+        outline: none;
+        font-weight: 600;
+        color: #fff;
+        margin: 0 auto 20px auto;
+        cursor: pointer;
+        min-width: 200px;
+
+        @media(max-width: 575px) {
+            & {
+                width: 250px;
+                margin: 20px auto;
+            }
+        }
+    
+        @media(min-width: 576px) AND (max-width: 767px) {
+            & {
+                width: 300px;
+                margin: 20px auto;
             }
         }
     }

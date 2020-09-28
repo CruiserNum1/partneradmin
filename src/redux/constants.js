@@ -1,4 +1,5 @@
-export const MOBGETCURRENCIESINFO       = "MOBGETCURRENCIES";
+export const MOBGETCURRENCIESINFO       = "MOBGETCURRENCIESINFO";
+export const GETCASHINFO                = "GETCASHINFO";
 export const ISPARTNERAUTHORIZED        = "ISPARTNERAUTHORIZED";
 export const SETMAINPARAMS              = "SETMAINPARAMS";
 export const SETTRANSACTIONS            = "SETTRANSACTIONS";

@@ -8,7 +8,6 @@ import TransactionItem from '@components/TransactionItem';
 
 class Transactions extends React.Component {
     render() {
-        console.log(this.props.transactions);
         return (
             <div className={ styles.wrapper }>
                 <div className={ styles.detailsTitle }>

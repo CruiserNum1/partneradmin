@@ -67,16 +67,17 @@ class TransactionCreation extends React.Component {
 
     // currency list
     get getCurrencyList() {
-        const mobgetcurrenciesinfo = this.props.mobgetcurrenciesinfo;
-        if(mobgetcurrenciesinfo) {
+        const getCashInfo = this.props.getCashInfo;
+        if(getCashInfo) {
             try {
-                let items = mobgetcurrenciesinfo.result.filter(item => item.cur_id >= 100).map(item => item.short_name);
-                return items;
-            } catch(e) {
-                console.log(e);
-            }
+                const cashIn = getCashInfo.cashTypes.cashIn;
+                let array = [];
+                for(let key in cashIn) {
+                    array.push(cashIn[key]);
+                }
+                return [...new Set(array.map(item => item.factCurrencyId))];
+            } catch(e) {}
         }
-        return [];
     }
 
     // currency out list
@@ -290,7 +291,7 @@ class TransactionCreation extends React.Component {
                                     id="deposit"
                                     value={this.state.isDeposit}
                                     onChange={(e) => this.setState({ isDeposit: e.target.checked})} />
-                                <label htmlFor="deposit">Use deposit scheme</label>
+                                <label htmlFor="deposit">{this.props.t('pages.createTransaction.depositScheme')}</label>
                             </div>
                             {
                                 !this.state.isDeposit &&
@@ -339,6 +340,7 @@ class TransactionCreation extends React.Component {
 
 export default connect(
     state => ({
-        mobgetcurrenciesinfo: state.mobgetcurrenciesinfo
+        mobgetcurrenciesinfo: state.mobgetcurrenciesinfo,
+        getCashInfo: state.getCashInfo
     })
 )(withTranslation()(TransactionCreation));

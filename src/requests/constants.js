@@ -8,3 +8,6 @@ export const SET_PARTNER_CSS        = '/gw/PartnerAdmin.aspx/SetPartnerCSS';
 export const LOGO_UPLOAD            = '/gw/PartnerAdmin.aspx/LogoUpload';
 export const DOWNLOAD_TRANSACTIONS  = '/gw/PartnerAdmin.aspx/DownloadListedTransactions';
 export const GET_FULL_URL           = '/gw/PartnerAdmin.aspx/GetFullUrl';
+export const SEND_NOTIFICATION      = '/gw/PartnerAdmin.aspx/SendNotification';
+export const MOBGETCURRENCIESINFO   = '/api/uni/mobgetcurrenciesinfoi/1';
+export const GETCASHINFO            = '/api/getCashInfo/1';
